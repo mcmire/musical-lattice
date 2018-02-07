@@ -1,6 +1,7 @@
 const path = require("path");
 const webpack = require("webpack");
 const webpackDevMiddleware = require("webpack-dev-middleware");
+const webpackHotMiddleware = require("webpack-hot-middleware");
 const webpackConfig = require("./webpack.config.js");
 const webpackCompiler = webpack(webpackConfig);
 const express = require("express");
@@ -11,9 +12,12 @@ app.set("view engine", "pug");
 
 app.use(
   webpackDevMiddleware(webpackCompiler, {
-    // webpack-dev-middleware options
+    noInfo: true,
+    publicPath: webpackConfig.output.publicPath
   })
 );
+
+app.use(webpackHotMiddleware(webpackCompiler));
 
 app.get("*", (req, res) => {
   res.render("index");
