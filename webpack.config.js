@@ -8,7 +8,7 @@ module.exports = {
     // Bundle the client for webpack-hot-middleware:
     "webpack-hot-middleware/client?reload=true",
     // Our actual entrypoint:
-    "./app/index.js"
+    "./client/index.js"
   ],
   devtool: "cheap-module-eval-source-map",
   output: {

@@ -6,7 +6,7 @@
   "author": "Elliot Winkler <elliot.winkler@gmail.com>",
   "license": "ISC",
   "scripts": {
-    "dev": "node ./devServer.js"
+    "dev": "node ./server/startDevServer.js"
   },
   "dependencies": {
     "express": "^4.16.2",
