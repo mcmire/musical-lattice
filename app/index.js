@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import { AppContainer } from "react-hot-loader";
+import { BrowserRouter } from "react-router-dom";
 import Root from "./components/Root";
 
 const rootElement = document.querySelector("#root");
@@ -8,7 +9,9 @@ const rootElement = document.querySelector("#root");
 function renderRoot() {
   ReactDOM.render(
     <AppContainer>
-      <Root />
+      <BrowserRouter>
+        <Root />
+      </BrowserRouter>
     </AppContainer>,
     rootElement
   );

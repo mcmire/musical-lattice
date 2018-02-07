@@ -12,7 +12,8 @@
     "express": "^4.16.2",
     "pug": "^2.0.0-rc.4",
     "react": "^16.2.0",
-    "react-dom": "^16.2.0"
+    "react-dom": "^16.2.0",
+    "react-router-dom": "^4.2.2"
   },
   "devDependencies": {
     "babel-core": "^6.26.0",
