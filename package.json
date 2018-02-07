@@ -1,0 +1,30 @@
+{
+  "name": "fakenstocks",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Fakenstocks allows you to play the stock market virtually and keep track of your performance.",
+  "author": "Elliot Winkler <elliot.winkler@gmail.com>",
+  "license": "ISC",
+  "scripts": {
+    "dev": "node ./devServer.js"
+  },
+  "dependencies": {
+    "express": "^4.16.2",
+    "pug": "^2.0.0-rc.4",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-eslint": "^8.2.1",
+    "babel-loader": "^7.1.2",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-react": "^6.24.1",
+    "eslint": "^4.17.0",
+    "eslint-plugin-prettier": "^2.6.0",
+    "jsonlint": "^1.6.2",
+    "prettier": "^1.10.2",
+    "webpack": "^3.10.0",
+    "webpack-dev-middleware": "^2.0.4"
+  }
+}
