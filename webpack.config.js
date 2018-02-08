@@ -3,6 +3,7 @@ const webpack = require("webpack");
 
 module.exports = {
   entry: [
+    "babel-polyfill",
     // Activate HMR for React:
     "react-hot-loader/patch",
     // Bundle the client for webpack-hot-middleware:
