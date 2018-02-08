@@ -1,3 +1,9 @@
+const User = require("./models/User");
+
+function renderIndex(req, res) {
+  res.render("index");
+}
+
 function buildApp(customizeApp) {
   const path = require("path");
   const express = require("express");
@@ -8,8 +14,14 @@ function buildApp(customizeApp) {
 
   customizeApp(app);
 
-  app.get("*", (req, res) => {
-    res.render("index");
+  app.get("/", renderIndex);
+  app.get("/members", renderIndex);
+  app.get("/users.json", async (req, res) => {
+    const users = await User.query().map(user => {
+      return { id: user.id, name: user.name };
+    });
+
+    res.json({ users });
   });
 
   return app;

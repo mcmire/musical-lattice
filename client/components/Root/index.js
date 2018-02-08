@@ -1,8 +1,7 @@
 import React from "react";
 import { Link, Route } from "react-router-dom";
-import About from "../About";
-import Features from "../Features";
 import Home from "../Home";
+import Users from "../Users";
 
 export default class Root extends React.Component {
   render() {
@@ -14,17 +13,13 @@ export default class Root extends React.Component {
               <Link to="/">Home</Link>
             </li>
             <li>
-              <Link to="/features">Features</Link>
-            </li>
-            <li>
-              <Link to="/about">About Us</Link>
+              <Link to="/members">Users</Link>
             </li>
           </ul>
         </nav>
         <div>
           <Route path="/" exact={true} component={Home} />
-          <Route path="/features" component={Features} />
-          <Route path="/about" component={About} />
+          <Route path="/members" component={Users} />
         </div>
       </div>
     );
