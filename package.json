@@ -8,7 +8,8 @@
   "scripts": {
     "dev": "node ./server/startDevServer.js",
     "build": "webpack --config webpack.prod.js",
-    "prod": "node ./server/startProdServer.js"
+    "prod": "node ./server/startProdServer.js",
+    "heroku-postbuild": "yarn run build"
   },
   "dependencies": {
     "babel-polyfill": "^6.26.0",
