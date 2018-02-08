@@ -1,13 +1,24 @@
+const fs = require("fs");
+const path = require("path");
+const express = require("express");
 const User = require("./models/User");
+const config = require("../config");
+let webpackManifest;
 
 function renderIndex(req, res) {
-  res.render("index");
+  res.render("index", {
+    staticDirectoryName: config.staticDirectoryName,
+    jsBundleFileName: webpackManifest["main.js"]
+  });
 }
 
 function buildApp(customizeApp) {
-  const path = require("path");
-  const express = require("express");
   const app = express();
+  webpackManifest = JSON.parse(
+    fs.readFileSync(
+      path.join(config.staticDirectoryPath, "manifest.json")
+    )
+  );
 
   app.set("views", path.join(__dirname, "../client/views"));
   app.set("view engine", "pug");
