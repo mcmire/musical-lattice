@@ -1,6 +1,7 @@
 const fs = require("fs");
 const path = require("path");
 const express = require("express");
+const morgan = require("morgan");
 const User = require("./models/User");
 const config = require("../config");
 let webpackManifest;
@@ -25,6 +26,7 @@ function buildApp(customizeApp) {
 
   customizeApp(app);
 
+  app.use(morgan("tiny"));
   app.get("/", renderIndex);
   app.get("/members", renderIndex);
   app.get("/users.json", async (req, res) => {
