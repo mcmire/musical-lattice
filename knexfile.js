@@ -15,6 +15,9 @@ const hostedConfiguration = {
   },
   migrations: {
     tableName: KNEX_MIGRATION_TABLE_NAME
+  },
+  seeds: {
+    directory: "./seeds/production"
   }
 };
 
