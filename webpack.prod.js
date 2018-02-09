@@ -6,6 +6,15 @@ const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const config = require("./config");
 const common = require("./webpack.common.js");
 
+const ownCssBundle = new ExtractTextPlugin({
+  filename: "[name]-[contenthash].css",
+  allChunks: true
+});
+const vendorCssBundle = new ExtractTextPlugin({
+  filename: "[name]-[contenthash].css",
+  allChunks: true
+});
+
 module.exports = mergeWebpackConfig(common, {
   entry: ["babel-polyfill", "./client/index.js"],
   devtool: "source-map",
@@ -15,9 +24,9 @@ module.exports = mergeWebpackConfig(common, {
   module: {
     rules: [
       {
-        test: /\.css/,
+        test: /\.css$/,
         exclude: /node_modules/,
-        use: ExtractTextPlugin.extract({
+        use: ownCssBundle.extract({
           use: {
             loader: "css-loader",
             options: {
@@ -33,6 +42,14 @@ module.exports = mergeWebpackConfig(common, {
             }
           }
         })
+      },
+      {
+        test: /\.css$/,
+        include: /node_modules/,
+        use: vendorCssBundle.extract({
+          use: "css-loader",
+          fallback: "style-loader"
+        })
       }
     ]
   },
@@ -44,9 +61,7 @@ module.exports = mergeWebpackConfig(common, {
     new webpack.DefinePlugin({
       "process.env.NODE_ENV": JSON.stringify("production")
     }),
-    new ExtractTextPlugin({
-      filename: "[name]-[contenthash].css",
-      allChunks: true
-    })
+    ownCssBundle,
+    vendorCssBundle
   ]
 });

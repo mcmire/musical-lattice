@@ -12,6 +12,10 @@ module.exports = {
         test: /\.js$/,
         exclude: /node_modules/,
         use: "babel-loader"
+      },
+      {
+        test: /\.(eot|ijmap|svg|ttf|woff|woff2)$/,
+        use: "file-loader"
       }
     ]
   },

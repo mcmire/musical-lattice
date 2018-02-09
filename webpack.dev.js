@@ -1,3 +1,5 @@
+const path = require("path");
+const util = require("util");
 const webpack = require("webpack");
 const common = require("./webpack.common.js");
 const mergeWebpackConfig = require("webpack-merge");
@@ -18,7 +20,7 @@ module.exports = mergeWebpackConfig(common, {
   module: {
     rules: [
       {
-        test: /\.css/,
+        test: /\.css$/,
         exclude: /node_modules/,
         use: [
           {
@@ -37,6 +39,12 @@ module.exports = mergeWebpackConfig(common, {
             }
           }
         ]
+      },
+      {
+        test: /\.css$/,
+        include: /node_modules/,
+        exclude: [path.resolve(__dirname, "client")],
+        use: ["style-loader", "css-loader"]
       }
     ]
   },
