@@ -12,11 +12,6 @@ module.exports = {
         test: /\.js$/,
         exclude: /node_modules/,
         use: "babel-loader"
-      },
-      {
-        test: /\.pug$/,
-        exclude: /node_modules/,
-        use: "pug-loader"
       }
     ]
   },
