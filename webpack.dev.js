@@ -13,6 +13,31 @@ module.exports = mergeWebpackConfig(common, {
   output: {
     filename: "bundle.js"
   },
+  module: {
+    rules: [
+      {
+        test: /\.css/,
+        exclude: /node_modules/,
+        use: [
+          {
+            loader: "style-loader",
+            options: {
+              sourceMap: true,
+              hmr: true
+            }
+          },
+          {
+            loader: "css-loader",
+            options: {
+              modules: true,
+              importLoaders: 1,
+              localIdentName: "[path]__[name]__[local]__[hash:base64:6]"
+            }
+          }
+        ]
+      }
+    ]
+  },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NamedModulesPlugin(),

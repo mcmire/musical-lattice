@@ -1,7 +1,11 @@
 import React from "react";
+import CSSModules from "react-css-modules";
+import styles from "./index.css";
 
-export default class Home extends React.Component {
+class Home extends React.Component {
   render() {
-    return <p>This is the home page</p>;
+    return <p styleName="root">This is the home page</p>;
   }
 }
+
+export default CSSModules(Home, styles);

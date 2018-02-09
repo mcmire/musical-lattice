@@ -3,6 +3,10 @@ html
   head
     title
       | The title
+    link(
+      rel="stylesheet"
+      href=`/${staticDirectoryName}/${cssBundleFileName}`
+    )
   body
     #root
     script(src=`/${staticDirectoryName}/${jsBundleFileName}`)

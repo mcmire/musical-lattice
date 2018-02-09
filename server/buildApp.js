@@ -9,16 +9,15 @@ let webpackManifest;
 function renderIndex(req, res) {
   res.render("index", {
     staticDirectoryName: config.staticDirectoryName,
-    jsBundleFileName: webpackManifest["main.js"]
+    jsBundleFileName: webpackManifest["main.js"],
+    cssBundleFileName: webpackManifest["main.css"]
   });
 }
 
 function buildApp(customizeApp) {
   const app = express();
   webpackManifest = JSON.parse(
-    fs.readFileSync(
-      path.join(config.staticDirectoryPath, "manifest.json")
-    )
+    fs.readFileSync(path.join(config.staticDirectoryPath, "manifest.json"))
   );
 
   app.set("views", path.join(__dirname, "../client/views"));
