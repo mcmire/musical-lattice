@@ -2,10 +2,10 @@ const buildApp = require("./buildApp");
 
 function determinePort() {
   if (process.env.PORT == null) {
-    if (process.env.NODE_ENV === "development") {
-      return 3000;
-    } else {
+    if (process.env.NODE_ENV === "production") {
       return 80;
+    } else {
+      return 3000;
     }
   } else {
     return process.env.PORT;
