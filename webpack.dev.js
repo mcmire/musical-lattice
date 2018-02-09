@@ -37,6 +37,9 @@ module.exports = mergeWebpackConfig(common, {
               importLoaders: 1,
               localIdentName: "[path]__[name]__[local]__[hash:base64:6]"
             }
+          },
+          {
+            loader: "postcss-loader"
           }
         ]
       },
