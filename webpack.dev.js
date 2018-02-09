@@ -1,6 +1,8 @@
 const webpack = require("webpack");
 const common = require("./webpack.common.js");
 const mergeWebpackConfig = require("webpack-merge");
+const CleanWebpackPlugin = require("clean-webpack-plugin");
+const config = require("./config");
 
 module.exports = mergeWebpackConfig(common, {
   entry: [
@@ -39,6 +41,7 @@ module.exports = mergeWebpackConfig(common, {
     ]
   },
   plugins: [
+    new CleanWebpackPlugin([config.staticDirectoryName]),
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NamedModulesPlugin(),
     new webpack.NoEmitOnErrorsPlugin()
