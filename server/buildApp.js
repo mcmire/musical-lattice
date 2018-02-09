@@ -4,9 +4,21 @@ const express = require("express");
 const morgan = require("morgan");
 const User = require("./models/User");
 const config = require("../config");
+
 let webpackManifest;
+function readWebpackManifest() {
+  if (!webpackManifest) {
+    webpackManifest = JSON.parse(
+      fs.readFileSync(path.join(config.staticDirectoryPath, "manifest.json"))
+    );
+  }
+
+  return webpackManifest;
+}
 
 function renderIndex(req, res) {
+  const webpackManifest = readWebpackManifest();
+
   res.render("index", {
     staticDirectoryName: config.staticDirectoryName,
     jsBundleFileName: webpackManifest["main.js"],
@@ -16,9 +28,6 @@ function renderIndex(req, res) {
 
 function buildApp(customizeApp) {
   const app = express();
-  webpackManifest = JSON.parse(
-    fs.readFileSync(path.join(config.staticDirectoryPath, "manifest.json"))
-  );
 
   app.set("views", path.join(__dirname, "../client/views"));
   app.set("view engine", "pug");
