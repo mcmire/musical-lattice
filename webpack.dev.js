@@ -1,5 +1,4 @@
 const path = require("path");
-const util = require("util");
 const webpack = require("webpack");
 const common = require("./webpack.common.js");
 const mergeWebpackConfig = require("webpack-merge");
@@ -7,12 +6,7 @@ const CleanWebpackPlugin = require("clean-webpack-plugin");
 const config = require("./config");
 
 module.exports = mergeWebpackConfig(common, {
-  entry: [
-    "babel-polyfill",
-    "react-hot-loader/patch",
-    "webpack-hot-middleware/client?reload=true",
-    "./client/index.js"
-  ],
+  entry: ["babel-polyfill", "react-hot-loader/patch", "./index.js"],
   devtool: "cheap-module-source-map",
   output: {
     filename: "bundle.js"
@@ -48,6 +42,10 @@ module.exports = mergeWebpackConfig(common, {
         include: /node_modules/,
         exclude: [path.resolve(__dirname, "client")],
         use: ["style-loader", "css-loader"]
+      },
+      {
+        test: /\.pug$/,
+        use: "pug-loader"
       }
     ]
   },
@@ -56,5 +54,8 @@ module.exports = mergeWebpackConfig(common, {
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NamedModulesPlugin(),
     new webpack.NoEmitOnErrorsPlugin()
-  ]
+  ],
+  devServer: {
+    hot: true
+  }
 });

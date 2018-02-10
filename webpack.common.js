@@ -1,10 +1,12 @@
+const path = require("path");
 const config = require("./config");
 const ManifestPlugin = require("webpack-manifest-plugin");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
+  context: path.join(__dirname, "app"),
   output: {
-    path: config.staticDirectoryPath,
-    publicPath: config.staticPublicPath
+    path: config.staticDirectoryPath
   },
   module: {
     rules: [
@@ -22,6 +24,11 @@ module.exports = {
   plugins: [
     new ManifestPlugin({
       writeToFileEmit: true
+    }),
+    new HtmlWebpackPlugin({
+      template: "index.pug",
+      inject: "body",
+      filename: "index.html"
     })
   ]
 };

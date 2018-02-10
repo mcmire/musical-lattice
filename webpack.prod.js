@@ -16,10 +16,11 @@ const vendorCssBundle = new ExtractTextPlugin({
 });
 
 module.exports = mergeWebpackConfig(common, {
-  entry: ["babel-polyfill", "./client/index.js"],
+  entry: ["babel-polyfill", "./index.js"],
   devtool: "source-map",
   output: {
-    filename: "[name].[chunkhash].js"
+    filename: "[name].[chunkhash].js",
+    publicPath: config.staticPublicPath
   },
   module: {
     rules: [
