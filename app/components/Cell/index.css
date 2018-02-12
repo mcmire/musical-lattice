@@ -1,0 +1,95 @@
+.root {
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-family: Roboto;
+  height: 120px;
+  position: relative;
+  text-align: center;
+  width: 104px;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.name,
+.frequency {
+  position: absolute;
+  width: 100%;
+  left: 0;
+}
+
+.name {
+  font-size: 16px;
+  top: 13px;
+}
+
+.ratio {
+}
+
+.ratio-thin {
+  font-family: "Roboto Condensed";
+}
+
+.ratio-thin .numerator,
+.ratio-thin .denominator {
+  font-size: 30px;
+}
+
+.ratio-thin .slash {
+  font-weight: 200;
+}
+
+.ratio-smaller .numerator,
+.ratio-smaller .denominator {
+  font-size: 24px;
+}
+
+.ratio-smaller .numerator {
+  margin-right: 0;
+}
+
+.ratio-smaller .denominator {
+  margin-left: -2px;
+}
+
+.ratio-smaller .slash {
+  font-size: 40px;
+}
+
+.numerator,
+.denominator,
+.slash {
+  display: inline-block;
+}
+
+.numerator,
+.denominator {
+  font-size: 32px;
+  font-weight: 500;
+  letter-spacing: -1px;
+}
+
+.numerator {
+  vertical-align: top;
+  text-align: right;
+  margin-right: 2px;
+}
+
+.denominator {
+  vertical-align: bottom;
+  text-align: left;
+  margin-left: 2px;
+}
+
+.slash {
+  font-size: 45px;
+  font-weight: 400;
+  transform: translateY(-2px) rotateZ(35deg);
+}
+
+.frequency {
+  font-weight: 100;
+  font-size: 14px;
+  bottom: 15px;
+}

@@ -17,9 +17,13 @@ module.exports = {
       },
       {
         test: /\.(eot|ijmap|svg|ttf|woff|woff2)$/,
+        //exclude: /node_modules/,
         use: "file-loader"
       }
     ]
+  },
+  resolve: {
+    extensions: [".js", ".svg"]
   },
   plugins: [
     new ManifestPlugin({

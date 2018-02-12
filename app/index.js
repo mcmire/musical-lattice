@@ -1,10 +1,13 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import { BrowserRouter } from "react-router-dom";
-import "normalize.css";
+
 import "material-components-web/dist/material-components-web.min.css";
 import "material-design-icons/iconfont/material-icons.css";
+import "typeface-roboto";
+import "typeface-roboto-condensed";
 
+import "./stylesheets/index.css";
 import Root from "./components/Root";
 
 const rootElement = document.querySelector("#root");
