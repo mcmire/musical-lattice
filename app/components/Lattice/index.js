@@ -1,66 +1,43 @@
 import React from "react";
-import CSSModules from "react-css-modules";
+import PropTypes from "prop-types";
 
-import styles from "./index.css";
-import Cell from "../Cell";
-
-const FUNDAMENTAL = 440;
+import CellModel from "../../services/Cell";
+import CellComponent from "../Cell";
 
 class Lattice extends React.Component {
   render() {
-    return (
-      <div styleName="root">
-        <Cell
-          className={styles.cell}
+    return <div>{this._buildCells()}</div>;
+  }
+
+  _buildCells() {
+    return this.props.cells.map(cell => {
+      return (
+        <CellComponent
+          frequency={cell.frequency}
           group={1}
-          fundamental={FUNDAMENTAL}
-          ratio={[9, 7]}
-          name="##3+"
-          location={[0, 0]}
+          key={cell.name}
+          location={cell.location}
+          name={cell.name}
+          ratio={cell.ratio}
+          viewportHeight={this.props.viewportHeight}
+          viewportWidth={this.props.viewportWidth}
         />
-        <Cell
-          className={styles.cell}
-          group={1}
-          fundamental={FUNDAMENTAL}
-          ratio={[98, 79]}
-          name="##3+"
-          location={[0, 0]}
-        />
-        <Cell
-          className={styles.cell}
-          group={1}
-          fundamental={FUNDAMENTAL}
-          ratio={[980, 79]}
-          name="##3+"
-          location={[0, 0]}
-        />
-        <Cell
-          className={styles.cell}
-          group={1}
-          fundamental={FUNDAMENTAL}
-          ratio={[98, 790]}
-          name="##3+"
-          location={[0, 0]}
-        />
-        <Cell
-          className={styles.cell}
-          group={1}
-          fundamental={FUNDAMENTAL}
-          ratio={[980, 790]}
-          name="##3+"
-          location={[0, 0]}
-        />
-        <Cell
-          className={styles.cell}
-          group={1}
-          fundamental={FUNDAMENTAL}
-          ratio={[1800, 999]}
-          name="##3+"
-          location={[0, 0]}
-        />
-      </div>
-    );
+      );
+    });
   }
 }
 
-export default CSSModules(Lattice, styles);
+Lattice.propTypes = {
+  cells: PropTypes.arrayOf((array, index) => {
+    if (!(array[index] instanceof CellModel)) {
+      return new Error(
+        `All values must be Cells, but found a ${array[index].constructor} ` +
+        "instead"
+      );
+    }
+  }),
+  viewportWidth: PropTypes.number.isRequired,
+  viewportHeight: PropTypes.number.isRequired
+};
+
+export default Lattice;

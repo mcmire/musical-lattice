@@ -18,6 +18,8 @@
     <polygon
       id="shape-template"
       points="0 30, 52 0, 104 30, 104 90, 52 120, 0 90"
+      stroke="#FFFFFF"
+      stroke-width="1"
     />
   </defs>
   <use id="shape-1" class="shape" href="#shape-template" fill="#FEEC90" />

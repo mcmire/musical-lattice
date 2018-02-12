@@ -5,5 +5,5 @@ module.exports = {
     "\\.css$": "identity-obj-proxy"
   },
   testPathIgnorePatterns: ["/node_modules/"],
-  setupTestFrameworkScriptFile: "<rootDir>/client/tests/setup.js"
+  setupTestFrameworkScriptFile: "<rootDir>/app/tests/setup.js"
 };

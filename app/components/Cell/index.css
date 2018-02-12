@@ -2,10 +2,8 @@
   background-repeat: no-repeat;
   background-size: cover;
   font-family: Roboto;
-  height: 120px;
-  position: relative;
+  position: absolute;
   text-align: center;
-  width: 104px;
   line-height: 1;
   display: flex;
   align-items: center;
