@@ -8,7 +8,7 @@ function roundToPrecision(number, precision) {
   return (Math.round(number * factor) / factor).toString();
 }
 
-export default class CellPresenter {
+export default class CellLabel {
   constructor({ note, viewport }) {
     this.note = note;
     this.viewport = viewport;

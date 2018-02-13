@@ -2,13 +2,13 @@ import React from "react";
 import PropTypes from "prop-types";
 import CSSModules from "react-css-modules";
 
-import CellPresenter from "../../models/CellPresenter";
+import Lattice from "../../models/Lattice";
 import Cell from "../Cell";
 import styles from "./index.css";
 
-function findSmallestYIn(cellPresenters) {
-  const ys = cellPresenters.map(cellPresenter => {
-    return cellPresenter.position.y;
+function findSmallestYIn(cellLabels) {
+  const ys = cellLabels.map(cellLabel => {
+    return cellLabel.position.y;
   });
 
   return Math.min(...ys);
@@ -16,31 +16,25 @@ function findSmallestYIn(cellPresenters) {
 
 class Honeycomb extends React.Component {
   render() {
-    const top = -findSmallestYIn(this.props.cellPresenters);
+    const cellLabels = this.props.lattice.buildCellLabels();
+    const top = -findSmallestYIn(cellLabels);
 
     return (
       <div styleName="root" style={{ top: `${top}px` }}>
-        {this._renderCells()}
+        {this._renderCells(cellLabels)}
       </div>
     );
   }
 
-  _renderCells() {
-    return this.props.cellPresenters.map(cellPresenter => {
-      return <Cell key={cellPresenter.name} cellPresenter={cellPresenter} />;
+  _renderCells(cellLabels) {
+    return cellLabels.map(cellLabel => {
+      return <Cell key={cellLabel.name} label={cellLabel} />;
     });
   }
 }
 
 Honeycomb.propTypes = {
-  cellPresenters: PropTypes.arrayOf((array, index) => {
-    if (!(array[index] instanceof CellPresenter)) {
-      return new Error(
-        "All values must be CellPresenters, but found a " +
-          `${array[index].constructor} instead`
-      );
-    }
-  })
+  lattice: PropTypes.instanceOf(Lattice)
 };
 
 export default CSSModules(Honeycomb, styles);

@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import CSSModules from "react-css-modules";
 
 import cellShapesFilePath from "../../svg/cell-shapes.svg";
-import CellPresenter from "../../models/CellPresenter";
+import CellLabel from "../../models/CellLabel";
 import styles from "./index.css";
 
 class Cell extends React.Component {
@@ -14,34 +14,30 @@ class Cell extends React.Component {
         styleName="root"
         style={{
           backgroundImage: `url(${cellShapesFilePath}#shape-${
-            this.props.cellPresenter.group
+            this.props.label.group
           })`,
-          width: `${this.props.cellPresenter.width}px`,
-          height: `${this.props.cellPresenter.height}px`,
-          left: this.props.cellPresenter.position.x,
-          top: this.props.cellPresenter.position.y
+          width: `${this.props.label.width}px`,
+          height: `${this.props.label.height}px`,
+          left: this.props.label.position.x,
+          top: this.props.label.position.y
         }}
       >
-        <div styleName="name">{this.props.cellPresenter.name}</div>
+        <div styleName="name">{this.props.label.name}</div>
         <div styleName={this._ratioStyleName}>
-          <span styleName="numerator">
-            {this.props.cellPresenter.ratioNumerator}
-          </span>
+          <span styleName="numerator">{this.props.label.ratioNumerator}</span>
           <span styleName="slash">|</span>
           <span styleName="denominator">
-            {this.props.cellPresenter.ratioDenominator}
+            {this.props.label.ratioDenominator}
           </span>
         </div>
-        <div styleName="frequency">
-          {this.props.cellPresenter.formattedFrequency}
-        </div>
+        <div styleName="frequency">{this.props.label.formattedFrequency}</div>
       </div>
     );
   }
 
   get _ratioStyleName() {
     const styles = ["ratio"];
-    const ratioSize = this.props.cellPresenter.ratioSize;
+    const ratioSize = this.props.label.ratioSize;
 
     if (ratioSize >= 6) {
       styles.push("ratio-thin");
@@ -57,7 +53,7 @@ class Cell extends React.Component {
 
 Cell.propTypes = {
   className: PropTypes.string,
-  cellPresenter: PropTypes.instanceOf(CellPresenter)
+  label: PropTypes.instanceOf(CellLabel)
 };
 
 export default CSSModules(Cell, styles, { allowMultiple: true });

@@ -1,8 +1,7 @@
 import React from "react";
 import CSSModules from "react-css-modules";
 
-import latticeNotes from "../../models/latticeNotes";
-import CellPresenter from "../../models/CellPresenter";
+import Lattice from "../../models/Lattice";
 import Honeycomb from "../Honeycomb";
 import styles from "./index.css";
 
@@ -16,11 +15,9 @@ class Home extends React.Component {
   }
 
   render() {
-    const cellPresenters = latticeNotes.map(note => {
-      return new CellPresenter({ note: note, viewport: this.state.viewport });
-    });
+    const lattice = new Lattice(this.state.viewport);
 
-    return <Honeycomb cellPresenters={cellPresenters} />;
+    return <Honeycomb lattice={lattice} />;
   }
 
   componentDidMount() {
