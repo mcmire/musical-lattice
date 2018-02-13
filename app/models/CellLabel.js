@@ -27,10 +27,6 @@ export default class CellLabel {
     return { x, y };
   }
 
-  get group() {
-    return this.note.group;
-  }
-
   get name() {
     return this.note.name;
   }

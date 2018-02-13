@@ -1,3 +1,4 @@
+import { flatMap } from "lodash";
 import React from "react";
 import PropTypes from "prop-types";
 import CSSModules from "react-css-modules";
@@ -16,19 +17,30 @@ function findSmallestYIn(cellLabels) {
 
 class Honeycomb extends React.Component {
   render() {
-    const cellLabels = this.props.lattice.buildCellLabels();
+    const cellLabelGroups = this.props.lattice.buildCellLabelGroups();
+    const cellLabels = flatMap(cellLabelGroups, cellLabelGroup => {
+      return cellLabelGroup.cellLabels;
+    });
     const top = -findSmallestYIn(cellLabels);
 
     return (
       <div styleName="root" style={{ top: `${top}px` }}>
-        {this._renderCells(cellLabels)}
+        {this._renderCells(cellLabelGroups)}
       </div>
     );
   }
 
-  _renderCells(cellLabels) {
-    return cellLabels.map(cellLabel => {
-      return <Cell key={cellLabel.name} label={cellLabel} />;
+  _renderCells(cellLabelGroups) {
+    return flatMap(cellLabelGroups, cellLabelGroup => {
+      return cellLabelGroup.cellLabels.map(cellLabel => {
+        return (
+          <Cell
+            key={cellLabel.name}
+            label={cellLabel}
+            group={cellLabelGroup.number}
+          />
+        );
+      });
     });
   }
 }

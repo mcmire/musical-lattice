@@ -14,7 +14,7 @@ class Cell extends React.Component {
         styleName="root"
         style={{
           backgroundImage: `url(${cellShapesFilePath}#shape-${
-            this.props.label.group
+            this.props.group
           })`,
           width: `${this.props.label.width}px`,
           height: `${this.props.label.height}px`,
@@ -53,7 +53,8 @@ class Cell extends React.Component {
 
 Cell.propTypes = {
   className: PropTypes.string,
-  label: PropTypes.instanceOf(CellLabel)
+  label: PropTypes.instanceOf(CellLabel).isRequired,
+  group: PropTypes.number.isRequired
 };
 
 export default CSSModules(Cell, styles, { allowMultiple: true });

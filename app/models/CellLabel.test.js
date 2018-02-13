@@ -17,15 +17,6 @@ describe("CellLabel", () => {
     });
   });
 
-  describe("#group", () => {
-    it("returns the group of the Note", () => {
-      const note = buildNote({ group: 1 });
-      const cellLabel = new CellLabel({ note: note });
-
-      expect(cellLabel.group).toBe(1);
-    });
-  });
-
   describe("#name", () => {
     it("returns the name of the Note", () => {
       const note = buildNote({ tone: 1, semitoneOffset: 0, commaOffset: 0 });

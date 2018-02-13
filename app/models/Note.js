@@ -7,7 +7,6 @@ import Ratio from "./Ratio";
 export default class Note {
   constructor({
     location,
-    group,
     tone,
     commaOffset,
     semitoneOffset,
@@ -15,7 +14,6 @@ export default class Note {
     fundamental
   }) {
     this.location = Location.wrap(location);
-    this.group = group;
     this.tone = Tone.wrap(tone);
     this.commaOffset = CommaOffset.wrap(commaOffset);
     this.semitoneOffset = SemitoneOffset.wrap(semitoneOffset);
@@ -38,7 +36,6 @@ export default class Note {
   goEast() {
     return new this.constructor({
       location: this.location.goEast(),
-      group: this.group,
       tone: this.tone.goEast(),
       commaOffset: this.commaOffset.goEast(this.tone),
       semitoneOffset: this.semitoneOffset.goEast(this.tone),
@@ -50,7 +47,6 @@ export default class Note {
   goWest() {
     return new this.constructor({
       location: this.location.goWest(),
-      group: this.group,
       tone: this.tone.goWest(),
       commaOffset: this.commaOffset.goWest(this.tone),
       semitoneOffset: this.semitoneOffset.goWest(this.tone),
@@ -62,7 +58,6 @@ export default class Note {
   goNortheast() {
     return new this.constructor({
       location: this.location.goNortheast(),
-      group: this.group,
       tone: this.tone.goNortheast(),
       commaOffset: this.commaOffset.goNortheast(this.tone),
       semitoneOffset: this.semitoneOffset.goNortheast(this.tone),
@@ -74,7 +69,6 @@ export default class Note {
   goSouthwest() {
     return new this.constructor({
       location: this.location.goSouthwest(),
-      group: this.group,
       tone: this.tone.goSouthwest(),
       commaOffset: this.commaOffset.goSouthwest(this.tone),
       semitoneOffset: this.semitoneOffset.goSouthwest(this.tone),

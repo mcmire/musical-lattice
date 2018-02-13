@@ -55,7 +55,6 @@ describe("Note", () => {
     it("returns a Note with all properties adjusted", () => {
       const note = new Note({
         location: [1, 2],
-        group: 2,
         tone: 7,
         commaOffset: 2,
         semitoneOffset: 1,
@@ -65,7 +64,6 @@ describe("Note", () => {
       const newNote = note.goEast();
 
       expect(newNote.location).toEqual(new Location([2, 2]));
-      expect(newNote.group).toBe(2);
       expect(newNote.tone).toEqual(new Tone(4));
       expect(newNote.commaOffset).toEqual(new CommaOffset(3));
       expect(newNote.semitoneOffset).toEqual(new SemitoneOffset(2));
@@ -77,7 +75,6 @@ describe("Note", () => {
     it("returns a Note with all properties adjusted", () => {
       const note = new Note({
         location: [1, 2],
-        group: 2,
         tone: 4,
         commaOffset: 2,
         semitoneOffset: 1,
@@ -87,7 +84,6 @@ describe("Note", () => {
       const newNote = note.goWest();
 
       expect(newNote.location).toEqual(new Location([0, 2]));
-      expect(newNote.group).toBe(2);
       expect(newNote.tone).toEqual(new Tone(7));
       expect(newNote.commaOffset).toEqual(new CommaOffset(1));
       expect(newNote.semitoneOffset).toEqual(new SemitoneOffset(0));
@@ -99,7 +95,6 @@ describe("Note", () => {
     it("returns a Note with all properties adjusted", () => {
       const note = new Note({
         location: [1, 2],
-        group: 2,
         tone: 2,
         commaOffset: 2,
         semitoneOffset: 1,
@@ -109,7 +104,6 @@ describe("Note", () => {
       const newNote = note.goNortheast();
 
       expect(newNote.location).toEqual(new Location([1, 3]));
-      expect(newNote.group).toBe(2);
       expect(newNote.tone).toEqual(new Tone(4));
       expect(newNote.commaOffset).toEqual(new CommaOffset(3));
       expect(newNote.semitoneOffset).toEqual(new SemitoneOffset(2));
@@ -121,7 +115,6 @@ describe("Note", () => {
     it("returns a Note with all properties adjusted", () => {
       const note = new Note({
         location: [1, 2],
-        group: 2,
         tone: 4,
         commaOffset: 2,
         semitoneOffset: 1,
@@ -131,7 +124,6 @@ describe("Note", () => {
       const newNote = note.goSouthwest();
 
       expect(newNote.location).toEqual(new Location([1, 1]));
-      expect(newNote.group).toBe(2);
       expect(newNote.tone).toEqual(new Tone(2));
       expect(newNote.commaOffset).toEqual(new CommaOffset(1));
       expect(newNote.semitoneOffset).toEqual(new SemitoneOffset(0));
