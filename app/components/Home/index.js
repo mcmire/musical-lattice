@@ -3,7 +3,7 @@ import CSSModules from "react-css-modules";
 
 import styles from "./index.css";
 import latticeNotes from "../../services/latticeNotes";
-import Lattice from "../Lattice";
+import Honeycomb from "../Honeycomb";
 
 class Home extends React.Component {
   constructor(props) {
@@ -16,7 +16,7 @@ class Home extends React.Component {
 
   render() {
     return (
-      <Lattice
+      <Honeycomb
         notes={latticeNotes}
         viewportWidth={this.state.viewportWidth}
         viewportHeight={this.state.viewportHeight}

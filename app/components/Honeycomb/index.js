@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 import Note from "../../services/Note";
 import Cell from "../Cell";
 
-class Lattice extends React.Component {
+class Honeycomb extends React.Component {
   render() {
     return <div>{this._buildCells()}</div>;
   }
@@ -27,7 +27,7 @@ class Lattice extends React.Component {
   }
 }
 
-Lattice.propTypes = {
+Honeycomb.propTypes = {
   cells: PropTypes.arrayOf((array, index) => {
     if (!(array[index] instanceof Note)) {
       return new Error(
@@ -40,4 +40,4 @@ Lattice.propTypes = {
   viewportHeight: PropTypes.number.isRequired
 };
 
-export default Lattice;
+export default Honeycomb;
