@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import Note from "../../services/Note";
+import Note from "../../models/Note";
 import Cell from "../Cell";
 
 class Honeycomb extends React.Component {

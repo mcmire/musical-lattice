@@ -3,8 +3,8 @@ import PropTypes from "prop-types";
 import CSSModules from "react-css-modules";
 
 import cellShapesFilePath from "../../svg/cell-shapes.svg";
-import Location from "../../services/Location";
-import Ratio from "../../services/Ratio";
+import Location from "../../models/Location";
+import Ratio from "../../models/Ratio";
 import styles from "./index.css";
 
 const WIDTH = 104;

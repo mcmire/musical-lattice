@@ -2,7 +2,7 @@ import React from "react";
 import CSSModules from "react-css-modules";
 
 import styles from "./index.css";
-import latticeNotes from "../../services/latticeNotes";
+import latticeNotes from "../../models/latticeNotes";
 import Honeycomb from "../Honeycomb";
 
 class Home extends React.Component {
