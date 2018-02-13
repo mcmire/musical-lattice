@@ -1,8 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import CellModel from "../../services/Cell";
-import CellComponent from "../Cell";
+import Note from "../../services/Note";
+import Cell from "../Cell";
 
 class Lattice extends React.Component {
   render() {
@@ -10,15 +10,15 @@ class Lattice extends React.Component {
   }
 
   _buildCells() {
-    return this.props.cells.map(cell => {
+    return this.props.notes.map(note => {
       return (
-        <CellComponent
-          frequency={cell.frequency}
+        <Cell
+          frequency={note.frequency}
           group={1}
-          key={cell.name}
-          location={cell.location}
-          name={cell.name}
-          ratio={cell.ratio}
+          key={note.name}
+          location={note.location}
+          name={note.name}
+          ratio={note.ratio}
           viewportHeight={this.props.viewportHeight}
           viewportWidth={this.props.viewportWidth}
         />
@@ -29,10 +29,10 @@ class Lattice extends React.Component {
 
 Lattice.propTypes = {
   cells: PropTypes.arrayOf((array, index) => {
-    if (!(array[index] instanceof CellModel)) {
+    if (!(array[index] instanceof Note)) {
       return new Error(
-        `All values must be Cells, but found a ${array[index].constructor} ` +
-        "instead"
+        `All values must be Notes, but found a ${array[index].constructor} ` +
+          "instead"
       );
     }
   }),

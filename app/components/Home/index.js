@@ -2,7 +2,7 @@ import React from "react";
 import CSSModules from "react-css-modules";
 
 import styles from "./index.css";
-import latticeCells from "../../services/latticeCells";
+import latticeNotes from "../../services/latticeNotes";
 import Lattice from "../Lattice";
 
 class Home extends React.Component {
@@ -17,7 +17,7 @@ class Home extends React.Component {
   render() {
     return (
       <Lattice
-        cells={latticeCells}
+        notes={latticeNotes}
         viewportWidth={this.state.viewportWidth}
         viewportHeight={this.state.viewportHeight}
       />

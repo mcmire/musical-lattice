@@ -4,7 +4,7 @@ import CommaOffset from "./CommaOffset";
 import SemitoneOffset from "./SemitoneOffset";
 import Ratio from "./Ratio";
 
-export default class Cell {
+export default class Note {
   constructor({
     location,
     tone,
