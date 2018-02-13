@@ -1,27 +1,26 @@
 import React from "react";
 import CSSModules from "react-css-modules";
 
-import styles from "./index.css";
 import latticeNotes from "../../models/latticeNotes";
+import CellPresenter from "../../models/CellPresenter";
 import Honeycomb from "../Honeycomb";
+import styles from "./index.css";
 
 class Home extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = this._calculateWindowDimensions();
+    this.state = { viewport: this._measureViewport() };
 
     this._onWindowResize = this._onWindowResize.bind(this);
   }
 
   render() {
-    return (
-      <Honeycomb
-        notes={latticeNotes}
-        viewportWidth={this.state.viewportWidth}
-        viewportHeight={this.state.viewportHeight}
-      />
-    );
+    const cellPresenters = latticeNotes.map(note => {
+      return new CellPresenter({ note: note, viewport: this.state.viewport });
+    });
+
+    return <Honeycomb cellPresenters={cellPresenters} />;
   }
 
   componentDidMount() {
@@ -33,15 +32,11 @@ class Home extends React.Component {
   }
 
   _onWindowResize() {
-    const dimensions = this._calculateWindowDimensions();
-    this.setState(dimensions);
+    this.setState({ viewport: this._measureViewport() });
   }
 
-  _calculateWindowDimensions() {
-    return {
-      viewportWidth: window.innerWidth,
-      viewportHeight: window.innerHeight
-    };
+  _measureViewport() {
+    return { width: window.innerWidth, height: window.innerHeight };
   }
 }
 

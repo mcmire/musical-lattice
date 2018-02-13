@@ -17,6 +17,7 @@ function buildNotesFrom(sourceNote, numberOfTimes, direction) {
 
 const root = new Note({
   location: [0, 0],
+  group: 1,
   tone: 1,
   commaOffset: 0,
   semitoneOffset: 0,
