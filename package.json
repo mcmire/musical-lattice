@@ -1,8 +1,8 @@
 {
-  "name": "fakenstocks",
+  "name": "musical-lattice",
   "version": "0.0.0",
   "private": true,
-  "description": "Fakenstocks allows you to play the stock market virtually and keep track of your performance.",
+  "description": "An interactive just intonation lattice",
   "author": "Elliot Winkler <elliot.winkler@gmail.com>",
   "license": "ISC",
   "engines": {
