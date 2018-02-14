@@ -19,8 +19,7 @@ module.exports = mergeWebpackConfig(common, {
   entry: ["babel-polyfill", "./index.js"],
   devtool: "source-map",
   output: {
-    filename: "[name].[chunkhash].js",
-    publicPath: config.staticPublicPath
+    filename: "[name].[chunkhash].js"
   },
   module: {
     rules: [
