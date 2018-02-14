@@ -43,6 +43,10 @@ export default class CellLabel {
     return this.note.ratio.toArray().join("").length;
   }
 
+  get frequency() {
+    return this.note.frequency;
+  }
+
   get formattedFrequency() {
     return roundToPrecision(this.note.frequency, 2);
   }

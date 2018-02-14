@@ -7734,6 +7734,10 @@ token-stream@0.0.1:
   version "0.0.1"
   resolved "https://registry.yarnpkg.com/token-stream/-/token-stream-0.0.1.tgz#ceeefc717a76c4316f126d0b9dbaa55d7e7df01a"
 
+tone@^0.12.63:
+  version "0.12.63"
+  resolved "https://registry.yarnpkg.com/tone/-/tone-0.12.63.tgz#884e9657a3cb4f74ff5d06aa1d89439ce9020469"
+
 toposort@^1.0.0:
   version "1.0.6"
   resolved "https://registry.yarnpkg.com/toposort/-/toposort-1.0.6.tgz#c31748e55d210effc00fdcdc7d6e68d7d7bb9cec"

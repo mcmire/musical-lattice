@@ -53,6 +53,15 @@ describe("CellLabel", () => {
     });
   });
 
+  describe("#frequency", () => {
+    it("returns the frequency of the Note", () => {
+      const note = buildNote({ fundamental: 440, ratio: [1, 1] });
+      const cellLabel = new CellLabel({ note: note });
+
+      expect(cellLabel.frequency).toBe(440);
+    });
+  });
+
   describe("#formattedFrequency", () => {
     it("returns the Note's frequency rounded to 2 decimal places", () => {
       const note = buildNote({ fundamental: 440, ratio: [5, 3] });

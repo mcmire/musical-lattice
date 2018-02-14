@@ -44,6 +44,7 @@
     "react-router-dom": "^4.2.2",
     "rmwc": "^1.1.2",
     "style-loader": "^0.20.1",
+    "tone": "^0.12.63",
     "typeface-roboto": "^0.0.54",
     "typeface-roboto-condensed": "^0.0.54",
     "uglifyjs-webpack-plugin": "^1.1.8",

@@ -1,15 +1,36 @@
 import React from "react";
 import PropTypes from "prop-types";
 import CSSModules from "react-css-modules";
+import Tone from "tone";
 
 import cellShapesFilePath from "../../svg/cell-shapes.svg";
 import CellLabel from "../../models/CellLabel";
 import styles from "./index.css";
 
 class Cell extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.env = new Tone.AmplitudeEnvelope({
+      attack: 0.05,
+      decay: 0,
+      sustain: 0.5,
+      release: 1.2
+    }).toMaster();
+
+    this.osc = new Tone.Oscillator({
+      type: "sine",
+      frequency: this.props.label.frequency,
+      volume: -6
+    }).connect(this.env);
+
+    this._onMouseDown = this._onMouseDown.bind(this);
+    this._onMouseUp = this._onMouseUp.bind(this);
+  }
+
   render() {
     return (
-      <div
+      <button
         className={this.props.className}
         styleName="root"
         style={{
@@ -21,6 +42,8 @@ class Cell extends React.Component {
           left: this.props.label.position.x,
           top: this.props.label.position.y
         }}
+        onMouseDown={this._onMouseDown}
+        onMouseUp={this._onMouseUp}
       >
         <div styleName="name">{this.props.label.name}</div>
         <div styleName={this._ratioStyleName}>
@@ -31,7 +54,7 @@ class Cell extends React.Component {
           </span>
         </div>
         <div styleName="frequency">{this.props.label.formattedFrequency}</div>
-      </div>
+      </button>
     );
   }
 
@@ -48,6 +71,18 @@ class Cell extends React.Component {
     }
 
     return styles.join(" ");
+  }
+
+  _onMouseDown() {
+    if (this.osc.state === "stopped") {
+      this.osc.start();
+    }
+
+    this.env.triggerAttack("+0.05");
+  }
+
+  _onMouseUp() {
+    this.env.triggerRelease();
   }
 }
 
