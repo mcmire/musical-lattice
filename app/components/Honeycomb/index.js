@@ -41,15 +41,15 @@ class Honeycomb extends React.Component {
       <div
         styleName="root"
         onMouseUp={this._onMouseUp}
-        style={{ height: `${lattice.height}px` }}
+        style={{ height: `${this.props.lattice.height}px` }}
       >
-        {this._renderCells(lattice.cellLabelGroups)}
+        {this._renderCells()}
       </div>
     );
   }
 
-  _renderCells(cellLabelGroups) {
-    return flatMap(cellLabelGroups, cellLabelGroup => {
+  _renderCells() {
+    return flatMap(this.props.lattice.cellLabelGroups, cellLabelGroup => {
       return cellLabelGroup.cellLabels.map(cellLabel => {
         return (
           <Cell

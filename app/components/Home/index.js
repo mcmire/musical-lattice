@@ -1,6 +1,6 @@
 import React from "react";
 
-import Lattice from "../../models/Lattice";
+import { buildLattice } from "../../models/Lattice";
 import Honeycomb from "../Honeycomb";
 
 class Home extends React.Component {
@@ -13,7 +13,7 @@ class Home extends React.Component {
   }
 
   render() {
-    const lattice = new Lattice(this.state.viewport);
+    const lattice = buildLattice(this.state.viewport);
 
     return <Honeycomb lattice={lattice} />;
   }
