@@ -11,7 +11,12 @@
   justify-content: center;
   border: none;
   padding: 0;
-  transition: filter linear 150ms;
+  transition: filter linear 150ms, transform linear 150ms;
+}
+
+.root:hover,
+.root:focus:active {
+  transform: scale(1.1, 1.1);
 }
 
 .root:hover {

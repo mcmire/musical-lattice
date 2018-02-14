@@ -9,22 +9,44 @@ function roundToPrecision(number, precision) {
 }
 
 export default class CellLabel {
-  constructor({ note, viewport }) {
+  constructor({ note, viewport, position = null }) {
     this.note = note;
     this.viewport = viewport;
+    this.position = position;
+
     this.width = WIDTH;
     this.height = HEIGHT;
   }
 
   get position() {
-    const x =
-      this._center.x +
-      this.note.location.x * WIDTH_WITH_BORDER +
-      this.note.location.y * (WIDTH_WITH_BORDER / 2);
+    if (this._position == null) {
+      const x =
+        this._center.x +
+        this.note.location.x * WIDTH_WITH_BORDER +
+        this.note.location.y * (WIDTH_WITH_BORDER / 2);
 
-    const y = this._center.y - this.note.location.y * 0.75 * HEIGHT_WITH_BORDER;
+      const y =
+        this._center.y - this.note.location.y * 0.75 * HEIGHT_WITH_BORDER;
 
-    return { x, y };
+      this._position = { x, y };
+    }
+
+    return this._position;
+  }
+
+  set position(position) {
+    this._position = position;
+  }
+
+  offsetPositionBy(position) {
+    return new this.constructor({
+      note: this.note,
+      viewport: this.viewport,
+      position: {
+        x: this.position.x + position.x,
+        y: this.position.y + position.y
+      }
+    });
   }
 
   get name() {
@@ -58,3 +80,5 @@ export default class CellLabel {
     return { x, y };
   }
 }
+
+CellLabel.HEIGHT = HEIGHT;

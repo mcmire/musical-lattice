@@ -17,6 +17,24 @@ describe("CellLabel", () => {
     });
   });
 
+  describe("#offsetPositionBy", () => {
+    it("returns a new CellLabel with its position offset by the given amount", () => {
+      const note = buildNote({ location: [1, 2] });
+      const cellLabel = new CellLabel({
+        note: note,
+        viewport: {
+          width: 1000,
+          height: 1000
+        }
+      });
+
+      const newCellLabel = cellLabel.offsetPositionBy({ x: 10, y: -5 });
+
+      expect(newCellLabel).not.toBe(cellLabel);
+      expect(newCellLabel.position).toEqual({ x: 669, y: 251 });
+    });
+  });
+
   describe("#name", () => {
     it("returns the name of the Note", () => {
       const note = buildNote({ tone: 1, semitoneOffset: 0, commaOffset: 0 });

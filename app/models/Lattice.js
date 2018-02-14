@@ -1,3 +1,4 @@
+import { flatMap } from "lodash";
 import Note from "./Note";
 import CellLabel from "./CellLabel";
 
@@ -9,15 +10,46 @@ export default class Lattice {
     this.viewport = viewport;
   }
 
-  buildCellLabelGroups() {
+  build() {
     const roots = this._determineRoots();
     const noteGroups = this._buildNoteGroupsFrom(roots);
     const cellLabelGroups = this._buildCellLabelGroupsFrom(noteGroups);
     const filteredCellLabelGroups = this._filterCellLabelGroups(
       cellLabelGroups
     );
+    const yRange = this._calculateYRange(filteredCellLabelGroups);
+    const repositionedCellLabelGroups = this._repositionCellLabelGroups(
+      filteredCellLabelGroups,
+      yRange
+    );
 
-    return filteredCellLabelGroups;
+    return {
+      height: yRange.end - yRange.start,
+      cellLabelGroups: repositionedCellLabelGroups
+    };
+  }
+
+  _repositionCellLabelGroups(cellLabelGroups, yRange) {
+    return cellLabelGroups.map(cellLabelGroup => {
+      const filteredCellLabels = cellLabelGroup.cellLabels.map(cellLabel => {
+        return cellLabel.offsetPositionBy({ x: 0, y: -yRange.start });
+      });
+
+      return { number: cellLabelGroup.number, cellLabels: filteredCellLabels };
+    });
+  }
+
+  _calculateYRange(cellLabelGroups) {
+    const ys = flatMap(cellLabelGroups, cellLabelGroup => {
+      return cellLabelGroup.cellLabels.map(cellLabel => {
+        return cellLabel.position.y;
+      });
+    });
+
+    return {
+      start: Math.min(...ys),
+      end: Math.max(...ys) + CellLabel.HEIGHT
+    };
   }
 
   _filterCellLabelGroups(cellLabelGroups) {

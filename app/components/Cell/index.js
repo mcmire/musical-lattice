@@ -1,7 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
 import CSSModules from "react-css-modules";
-import Tone from "tone";
 
 import cellShapesFilePath from "../../svg/cell-shapes.svg";
 import CellLabel from "../../models/CellLabel";
@@ -11,21 +10,10 @@ class Cell extends React.Component {
   constructor(props) {
     super(props);
 
-    this.env = new Tone.AmplitudeEnvelope({
-      attack: 0.05,
-      decay: 0,
-      sustain: 0.5,
-      release: 1.2
-    }).toMaster();
-
-    this.osc = new Tone.Oscillator({
-      type: "sine",
-      frequency: this.props.label.frequency,
-      volume: -6
-    }).connect(this.env);
-
+    this._onMouseEnter = this._onMouseEnter.bind(this);
+    this._onMouseLeave = this._onMouseLeave.bind(this);
     this._onMouseDown = this._onMouseDown.bind(this);
-    this._onMouseUp = this._onMouseUp.bind(this);
+    this._onContextMenu = this._onContextMenu.bind(this);
   }
 
   render() {
@@ -40,10 +28,13 @@ class Cell extends React.Component {
           width: `${this.props.label.width}px`,
           height: `${this.props.label.height}px`,
           left: this.props.label.position.x,
-          top: this.props.label.position.y
+          top: this.props.label.position.y,
+          zIndex: this.props.zIndex
         }}
+        onMouseEnter={this._onMouseEnter}
+        onMouseLeave={this._onMouseLeave}
         onMouseDown={this._onMouseDown}
-        onMouseUp={this._onMouseUp}
+        onContextMenu={this._onContextMenu}
       >
         <div styleName="name">{this.props.label.name}</div>
         <div styleName={this._ratioStyleName}>
@@ -73,23 +64,32 @@ class Cell extends React.Component {
     return styles.join(" ");
   }
 
-  _onMouseDown() {
-    if (this.osc.state === "stopped") {
-      this.osc.start();
-    }
-
-    this.env.triggerAttack("+0.05");
+  _onMouseEnter() {
+    this.props.onMouseEnter(this.props.label);
   }
 
-  _onMouseUp() {
-    this.env.triggerRelease();
+  _onMouseLeave() {
+    this.props.onMouseLeave();
+  }
+
+  _onMouseDown(event) {
+    event.preventDefault();
+    this.props.onMouseDown(this.props.label);
+  }
+
+  _onContextMenu(event) {
+    event.preventDefault();
+    event.stopPropagation();
   }
 }
 
 Cell.propTypes = {
   className: PropTypes.string,
   label: PropTypes.instanceOf(CellLabel).isRequired,
-  group: PropTypes.number.isRequired
+  group: PropTypes.number.isRequired,
+  zIndex: PropTypes.number.isRequired,
+  onMouseEnter: PropTypes.func.isRequired,
+  onMouseDown: PropTypes.func.isRequired
 };
 
 export default CSSModules(Cell, styles, { allowMultiple: true });
