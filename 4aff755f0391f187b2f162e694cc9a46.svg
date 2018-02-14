@@ -1,0 +1,35 @@
+<svg
+  styleName="root"
+  viewBox="0 0 104 120"
+  xmlns="http://www.w3.org/2000/svg"
+  width="104"
+  height="120"
+>
+  <defs>
+    <style>
+      .shape {
+        display: none;
+      }
+
+      .shape:target {
+        display: inline;
+      }
+    </style>
+    <polygon
+      id="shape-template"
+      points="0 30, 52 0, 104 30, 104 90, 52 120, 0 90"
+      stroke="#FFFFFF"
+      stroke-width="1"
+    />
+  </defs>
+  <use id="shape-1" class="shape" href="#shape-template" fill="#FFD1D1" />
+  <use id="shape-2" class="shape" href="#shape-template" fill="#FFE1B6" />
+  <use id="shape-3" class="shape" href="#shape-template" fill="#F3EDA2" />
+  <use id="shape-4" class="shape" href="#shape-template" fill="#CBEEAF" />
+  <use id="shape-5" class="shape" href="#shape-template" fill="#B6F0C4" />
+  <use id="shape-6" class="shape" href="#shape-template" fill="#C6EDF3" />
+  <use id="shape-7" class="shape" href="#shape-template" fill="#D2DCF7" />
+  <use id="shape-8" class="shape" href="#shape-template" fill="#DAD4F6" />
+  <use id="shape-9" class="shape" href="#shape-template" fill="#F3D1F3" />
+  <use id="shape-10" class="shape" href="#shape-template" fill="#F5C2E7" />
+</svg>
