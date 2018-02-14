@@ -4,6 +4,6 @@ import Home from "../Home";
 
 export default class Root extends React.Component {
   render() {
-    return <Route path="/" exact={true} component={Home} />;
+    return <Home />;
   }
 }

@@ -1,6 +1,5 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { BrowserRouter } from "react-router-dom";
 
 import "material-components-web/dist/material-components-web.min.css";
 import "material-design-icons/iconfont/material-icons.css";
@@ -16,9 +15,7 @@ let renderRoot;
 if (process.env.NODE_ENV === "production") {
   renderRoot = () => {
     ReactDOM.render(
-      <BrowserRouter>
-        <Root />
-      </BrowserRouter>,
+      <Root />,
       rootElement
     );
   };
@@ -28,9 +25,7 @@ if (process.env.NODE_ENV === "production") {
   renderRoot = () => {
     ReactDOM.render(
       <AppContainer>
-        <BrowserRouter>
-          <Root />
-        </BrowserRouter>
+        <Root />
       </AppContainer>,
       rootElement
     );
