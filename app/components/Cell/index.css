@@ -11,25 +11,25 @@
   justify-content: center;
   border: none;
   padding: 0;
-  transition: filter linear 150ms, transform linear 150ms;
+  transition: filter linear 150ms, transform linear 150ms, opacity linear 150ms;
 }
 
-.root:hover,
-.root:focus:active {
-  transform: scale(1.1, 1.1);
-}
-
-.root:hover {
+.root.enabled:hover {
   cursor: pointer;
   filter: drop-shadow(0px 3px 2px rgba(0,0,0,0.4));
 }
 
-.root:focus:active {
+.root.enabled.active {
+  transform: scale(1.1, 1.1);
   filter: drop-shadow(0px 3px 2px rgba(0,0,0,0.6));
 }
 
-.root:focus {
+.root.enabled:focus {
   outline: none;
+}
+
+.root.disabled {
+  opacity: 0.15;
 }
 
 .name,

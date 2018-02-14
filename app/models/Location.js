@@ -27,4 +27,11 @@ export default class Location {
   goSouthwest() {
     return new this.constructor([this.x, this.y - 1]);
   }
+
+  equals(other) {
+    return (
+      (other instanceof Location && other.x === this.x && other.y === this.y) ||
+      (Array.isArray(other) && other[0] === this.x && other[1] === this.y)
+    );
+  }
 }

@@ -32,4 +32,5 @@
   <use id="shape-8" class="shape" href="#shape-template" fill="#DAD4F6" />
   <use id="shape-9" class="shape" href="#shape-template" fill="#F3D1F3" />
   <use id="shape-10" class="shape" href="#shape-template" fill="#F5C2E7" />
+  <use id="shape-disabled" class="shape" href="#shape-template" fill="#EDEDED" />
 </svg>

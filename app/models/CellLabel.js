@@ -53,6 +53,10 @@ export default class CellLabel {
     return this.note.name;
   }
 
+  get location() {
+    return this.note.location;
+  }
+
   get ratioNumerator() {
     return this.note.ratio.top;
   }
@@ -71,6 +75,10 @@ export default class CellLabel {
 
   get formattedFrequency() {
     return roundToPrecision(this.note.frequency, 2);
+  }
+
+  equals(other) {
+    return (other instanceof CellLabel && other.name === this.name);
   }
 
   get _center() {

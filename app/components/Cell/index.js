@@ -20,11 +20,9 @@ class Cell extends React.Component {
     return (
       <button
         className={this.props.className}
-        styleName="root"
+        styleName={this._styleName}
         style={{
-          backgroundImage: `url(${cellShapesFilePath}#shape-${
-            this.props.group
-          })`,
+          backgroundImage: `url(${cellShapesFilePath}#${this._shapeId}`,
           width: `${this.props.label.width}px`,
           height: `${this.props.label.height}px`,
           left: this.props.label.position.x,
@@ -47,6 +45,30 @@ class Cell extends React.Component {
         <div styleName="frequency">{this.props.label.formattedFrequency}</div>
       </button>
     );
+  }
+
+  get _styleName() {
+    const styleNames = ["root"];
+
+    if (this.props.isEnabled) {
+      styleNames.push("enabled");
+    } else {
+      styleNames.push("disabled");
+    }
+
+    if (this.props.isActive) {
+      styleNames.push("active");
+    }
+
+    return styleNames.join(" ");
+  }
+
+  get _shapeId() {
+    if (this.props.isEnabled) {
+      return `shape-${this.props.group})`;
+    } else {
+      return "shape-disabled";
+    }
   }
 
   get _ratioStyleName() {
@@ -89,7 +111,8 @@ Cell.propTypes = {
   group: PropTypes.number.isRequired,
   zIndex: PropTypes.number.isRequired,
   onMouseEnter: PropTypes.func.isRequired,
-  onMouseDown: PropTypes.func.isRequired
+  onMouseDown: PropTypes.func.isRequired,
+  isEnabled: PropTypes.bool.isRequired
 };
 
 export default CSSModules(Cell, styles, { allowMultiple: true });

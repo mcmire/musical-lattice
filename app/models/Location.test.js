@@ -60,4 +60,69 @@ describe("Location", () => {
       expect(newLocation.y).toBe(1);
     });
   });
+
+  describe("#equals", () => {
+    describe("given a Location", () => {
+      describe("with the same X and Y", () => {
+        it("returns true", () => {
+          const location1 = new Location([1, 2]);
+          const location2 = new Location([1, 2]);
+
+          expect(location1.equals(location2)).toBe(true);
+        });
+      });
+
+      describe("with a different X", () => {
+        it("returns false", () => {
+          const location1 = new Location([1, 2]);
+          const location2 = new Location([2, 2]);
+
+          expect(location1.equals(location2)).toBe(false);
+        });
+      });
+
+      describe("with a different Y", () => {
+        it("returns false", () => {
+          const location1 = new Location([1, 2]);
+          const location2 = new Location([1, 3]);
+
+          expect(location1.equals(location2)).toBe(false);
+        });
+      });
+    });
+
+    describe("given a location tuple", () => {
+      describe("with the same X and Y", () => {
+        it("returns true", () => {
+          const location = new Location([1, 2]);
+
+          expect(location.equals([1, 2])).toBe(true);
+        });
+      });
+
+      describe("with a different X", () => {
+        it("returns false", () => {
+          const location = new Location([1, 2]);
+
+          expect(location.equals([2, 2])).toBe(false);
+        });
+      });
+
+      describe("with a different Y", () => {
+        it("returns false", () => {
+          const location = new Location([1, 2]);
+
+          expect(location.equals([1, 3])).toBe(false);
+        });
+      });
+    });
+
+    describe("given something else", () => {
+      it("returns false", () => {
+        const location = new Location([1, 2]);
+
+        expect(location.equals("whatever")).toBe(false);
+      });
+    });
+  });
 });
