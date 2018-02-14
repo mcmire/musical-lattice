@@ -1,7 +1,11 @@
 {
   "env": {
     "development": {
-      "plugins": ["react-hot-loader/babel", "lodash"]
+      "plugins": [
+        "react-hot-loader/babel",
+        "lodash",
+        "transform-object-rest-spread"
+      ]
     },
     "test": {
       "presets": ["env", "react"]
