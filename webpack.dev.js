@@ -42,10 +42,6 @@ module.exports = mergeWebpackConfig(common, {
         include: /node_modules/,
         exclude: [path.resolve(__dirname, "client")],
         use: ["style-loader", "css-loader"]
-      },
-      {
-        test: /\.pug$/,
-        use: "pug-loader"
       }
     ]
   },
