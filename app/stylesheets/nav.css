@@ -1,0 +1,19 @@
+.nav {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav li {
+  margin: 0;
+  padding: 0;
+  display: inline;
+}
+
+.nav a {
+  text-decoration: none;
+}
+
+.nav i {
+  display: block;
+}

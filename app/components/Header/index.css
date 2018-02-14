@@ -1,0 +1,33 @@
+.root {
+  left: 0;
+  line-height: 1.5;
+  opacity: 0.3;
+  padding: 40px 40px 0 40px;
+  position: absolute;
+  top: 0;
+  transition: opacity linear 300ms;
+  z-index: 10;
+}
+
+.root:hover {
+  opacity: 1;
+}
+
+.title,
+.subtitle {
+  margin: 0;
+}
+
+.title {
+  font-size: 32px;
+  font-weight: 400;
+  font-family: "Roboto Slab";
+  letter-spacing: -0.5px;
+}
+
+.subtitle {
+  font-size: 18px;
+  font-weight: 400;
+  font-style: italic;
+  font-family: "Roboto";
+}

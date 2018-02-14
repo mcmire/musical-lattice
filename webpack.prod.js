@@ -1,3 +1,4 @@
+const path = require("path");
 const webpack = require("webpack");
 const mergeWebpackConfig = require("webpack-merge");
 const UglifyJSPlugin = require("uglifyjs-webpack-plugin");
@@ -25,7 +26,7 @@ module.exports = mergeWebpackConfig(common, {
     rules: [
       {
         test: /\.css$/,
-        exclude: /node_modules/,
+        include: path.resolve(__dirname, "app/components"),
         use: ownCssBundle.extract({
           use: {
             loader: "css-loader",
@@ -45,7 +46,18 @@ module.exports = mergeWebpackConfig(common, {
       },
       {
         test: /\.css$/,
-        include: /node_modules/,
+        exclude: [
+          path.resolve(__dirname, "app/components"),
+          path.resolve(__dirname, "node_modules")
+        ],
+        use: vendorCssBundle.extract({
+          use: ["css-loader", "postcss-loader"],
+          fallback: "style-loader"
+        })
+      },
+      {
+        test: /\.css$/,
+        include: path.resolve(__dirname, "node_modules"),
         use: vendorCssBundle.extract({
           use: "css-loader",
           fallback: "style-loader"

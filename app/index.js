@@ -5,6 +5,7 @@ import "material-components-web/dist/material-components-web.min.css";
 import "material-design-icons/iconfont/material-icons.css";
 import "typeface-roboto";
 import "typeface-roboto-condensed";
+import "typeface-roboto-slab";
 
 import "./stylesheets/index.css";
 import Root from "./components/Root";

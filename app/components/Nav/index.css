@@ -1,0 +1,27 @@
+.root {
+  composes: nav from "../../stylesheets/nav.css";
+
+  font-family: "Roboto Condensed";
+  opacity: 0.3;
+  position: absolute;
+  right: 40px;
+  text-align: right;
+  top: 40px;
+  z-index: 10;
+}
+
+.root:hover {
+  opacity: 1;
+}
+
+.root a {
+  display: block;
+}
+
+.root a:hover {
+  border: none;
+}
+
+.help-icon {
+  font-size: 30px;
+}

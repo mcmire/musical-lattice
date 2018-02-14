@@ -16,7 +16,6 @@ module.exports = {
       },
       {
         test: /\.(eot|ijmap|svg|ttf|woff|woff2)$/,
-        //exclude: /node_modules/,
         use: "file-loader"
       },
       {
@@ -26,7 +25,7 @@ module.exports = {
     ]
   },
   resolve: {
-    extensions: [".js", ".svg"]
+    extensions: [".js", ".svg", ".css"]
   },
   plugins: [
     new HtmlWebpackPlugin({

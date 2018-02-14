@@ -15,7 +15,7 @@ module.exports = mergeWebpackConfig(common, {
     rules: [
       {
         test: /\.css$/,
-        exclude: /node_modules/,
+        include: path.resolve(__dirname, "app/components"),
         use: [
           {
             loader: "style-loader",
@@ -39,8 +39,15 @@ module.exports = mergeWebpackConfig(common, {
       },
       {
         test: /\.css$/,
-        include: /node_modules/,
-        exclude: [path.resolve(__dirname, "client")],
+        exclude: [
+          path.resolve(__dirname, "app/components"),
+          path.resolve(__dirname, "node_modules")
+        ],
+        use: ["style-loader", "css-loader", "postcss-loader"]
+      },
+      {
+        test: /\.css$/,
+        include: path.resolve(__dirname, "node_modules"),
         use: ["style-loader", "css-loader"]
       }
     ]

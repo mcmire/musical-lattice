@@ -1,5 +1,41 @@
-@import "normalize.css";
+@import "~normalize.css";
+@import "~rc-tooltip/assets/bootstrap.css";
+@import "./rc-tooltip-overrides.css";
 
-* {
+:global * {
   box-sizing: border-box;
+}
+
+:global a {
+  color: #0366d6;
+}
+
+:global a:hover {
+  text-decoration: none;
+}
+
+:global p a {
+  text-decoration: none;
+}
+
+:global p a:hover {
+  border-bottom: 1px solid currentcolor;
+}
+
+:global p,
+:global li {
+  line-height: 1.6;
+}
+
+:global p {
+  margin-top: 0;
+  margin-bottom: 1em;
+}
+
+:global ul {
+  margin-bottom: 1em;
+}
+
+:global li {
+  margin-bottom: 0.5em;
 }

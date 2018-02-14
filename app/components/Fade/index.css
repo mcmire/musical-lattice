@@ -1,0 +1,12 @@
+.fade {
+  opacity: 0;
+  transition: opacity linear 300ms;
+}
+
+.in {
+  opacity: 1;
+}
+
+.out {
+  opacity: 0;
+}

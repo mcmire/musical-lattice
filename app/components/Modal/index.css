@@ -1,0 +1,84 @@
+.backdrop,
+.dialog-wrapper {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0,0,0,0.4);
+}
+
+.backdrop {
+  z-index: 1000;
+}
+
+.dialog-wrapper {
+  z-index: 1001;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dialog {
+  background: white;
+  padding: 30px;
+  box-shadow: 0px 0px 10px rgba(0,0,0,0.4);
+  border-radius: 5px;
+  width: 500px;
+  min-height: 500px;
+  max-height: 100vh;
+  position: relative;
+  overflow: auto;
+}
+
+.dialog:focus {
+  outline: none;
+}
+
+.header-actions {
+  position: absolute;
+  text-align: right;
+  top: 15px;
+  right: 15px;
+  line-height: 1;
+}
+
+.close-link {
+  opacity: 0.5;
+  color: gray;
+  transition: opacity linear 250ms;
+  display: block;
+  text-decoration: none;
+}
+
+.close-link:hover {
+  opacity: 1;
+}
+
+.close-link i {
+  display: block;
+}
+
+.header {
+  font-family: "Roboto Slab";
+  font-weight: 400;
+  font-size: 32px;
+  margin-bottom: 30px;
+  text-align: center;
+  letter-spacing: -0.5px;
+}
+
+.header h1 {
+  font-size: inherit;
+  font-weight: inherit;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.body {
+  font-family: "Roboto";
+}
+
+.body h2:not(:first-child) {
+  margin-top: 30px;
+}

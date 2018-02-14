@@ -1,6 +1,8 @@
 import React from "react";
 
 import { buildLattice } from "../../models/Lattice";
+import Header from "../Header";
+import Nav from "../Nav";
 import Honeycomb from "../Honeycomb";
 
 class Home extends React.Component {
@@ -15,7 +17,13 @@ class Home extends React.Component {
   render() {
     const lattice = buildLattice(this.state.viewport);
 
-    return <Honeycomb lattice={lattice} />;
+    return (
+      <React.Fragment>
+        <Header />
+        <Nav />
+        <Honeycomb lattice={lattice} />
+      </React.Fragment>
+    );
   }
 
   componentDidMount() {

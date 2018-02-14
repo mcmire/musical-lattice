@@ -10,9 +10,11 @@ export function buildLattice(viewport) {
   const noteGroups = buildNoteGroupsFrom(roots);
   const cellLabelGroups = buildCellLabelGroupsFrom(noteGroups, viewport);
   const filteredCellLabelGroups = filterCellLabelGroups(cellLabelGroups);
+  const xRange = calculateXRange(filteredCellLabelGroups);
   const yRange = calculateYRange(filteredCellLabelGroups);
   const repositionedCellLabelGroups = repositionCellLabelGroups(
     filteredCellLabelGroups,
+    xRange,
     yRange
   );
 
@@ -22,14 +24,27 @@ export function buildLattice(viewport) {
   });
 }
 
-function repositionCellLabelGroups(cellLabelGroups, yRange) {
+function repositionCellLabelGroups(cellLabelGroups, xRange, yRange) {
   return cellLabelGroups.map(cellLabelGroup => {
     const filteredCellLabels = cellLabelGroup.cellLabels.map(cellLabel => {
-      return cellLabel.offsetPositionBy({ x: 0, y: -yRange.start });
+      return cellLabel.offsetPositionBy({ x: -xRange.start, y: -yRange.start });
     });
 
     return { number: cellLabelGroup.number, cellLabels: filteredCellLabels };
   });
+}
+
+function calculateXRange(cellLabelGroups) {
+  const xs = flatMap(cellLabelGroups, cellLabelGroup => {
+    return cellLabelGroup.cellLabels.map(cellLabel => {
+      return cellLabel.position.x;
+    });
+  });
+
+  return {
+    start: Math.min(...xs),
+    end: Math.max(...xs)
+  };
 }
 
 function calculateYRange(cellLabelGroups) {
