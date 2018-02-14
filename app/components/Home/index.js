@@ -1,9 +1,7 @@
 import React from "react";
-import CSSModules from "react-css-modules";
 
 import Lattice from "../../models/Lattice";
 import Honeycomb from "../Honeycomb";
-import styles from "./index.css";
 
 class Home extends React.Component {
   constructor(props) {
@@ -37,4 +35,4 @@ class Home extends React.Component {
   }
 }
 
-export default CSSModules(Home, styles);
+export default Home;
