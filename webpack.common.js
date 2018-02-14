@@ -1,6 +1,5 @@
 const path = require("path");
 const config = require("./config");
-const ManifestPlugin = require("webpack-manifest-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
@@ -30,9 +29,6 @@ module.exports = {
     extensions: [".js", ".svg"]
   },
   plugins: [
-    new ManifestPlugin({
-      writeToFileEmit: true
-    }),
     new HtmlWebpackPlugin({
       template: "index.pug",
       inject: "body",
