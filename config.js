@@ -1,5 +1,5 @@
 const path = require("path");
-const staticDirectoryName = "assets";
+const staticDirectoryName = "build";
 const staticUri = `/${staticDirectoryName}`;
 
 module.exports = {

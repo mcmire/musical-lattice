@@ -12,7 +12,8 @@
     "dev": "webpack-dev-server --config webpack.dev.js",
     "build": "webpack --config webpack.prod.js",
     "heroku-postbuild": "yarn run build",
-    "test": "jest"
+    "test": "jest",
+    "deploy": "gh-pages -d build"
   },
   "dependencies": {
     "babel-core": "^6.26.0",
@@ -58,6 +59,7 @@
     "enzyme-adapter-react-16": "^1.1.1",
     "eslint": "^4.17.0",
     "eslint-plugin-prettier": "^2.6.0",
+    "gh-pages": "^1.1.0",
     "html-webpack-plugin": "^2.30.1",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^22.2.2",
