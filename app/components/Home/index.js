@@ -18,11 +18,10 @@ class Home extends React.Component {
     const lattice = buildLattice(this.state.viewport);
 
     return (
-      <React.Fragment>
+      <Honeycomb lattice={lattice}>
         <Header />
         <Nav />
-        <Honeycomb lattice={lattice} />
-      </React.Fragment>
+      </Honeycomb>
     );
   }
 

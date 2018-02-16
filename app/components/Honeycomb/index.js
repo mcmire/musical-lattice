@@ -95,9 +95,13 @@ class Honeycomb extends React.Component {
       <div
         styleName="root"
         onMouseUp={this._onMouseUp}
-        style={{ height: `${this.props.lattice.height}px` }}
+        style={{
+          height: `${this.props.lattice.height}px`,
+          width: `${this.props.lattice.width}px`
+        }}
       >
         {this._renderCells()}
+        {this.props.children}
       </div>
     );
   }
@@ -239,7 +243,8 @@ class Honeycomb extends React.Component {
 }
 
 Honeycomb.propTypes = {
-  lattice: PropTypes.instanceOf(Lattice)
+  lattice: PropTypes.instanceOf(Lattice).isRequired,
+  children: PropTypes.node.isRequired
 };
 
 export default CSSModules(Honeycomb, styles);

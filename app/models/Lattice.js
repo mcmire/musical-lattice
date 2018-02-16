@@ -20,6 +20,7 @@ export function buildLattice(viewport) {
 
   return new Lattice({
     height: yRange.end - yRange.start,
+    width: xRange.end - xRange.start,
     cellLabelGroups: repositionedCellLabelGroups
   });
 }
@@ -43,7 +44,7 @@ function calculateXRange(cellLabelGroups) {
 
   return {
     start: Math.min(...xs),
-    end: Math.max(...xs)
+    end: Math.max(...xs) + CellLabel.WIDTH
   };
 }
 
@@ -175,8 +176,9 @@ function flattenCellLabelGroups(cellLabelGroups) {
 }
 
 export class Lattice {
-  constructor({ height, cellLabelGroups }) {
+  constructor({ height, width, cellLabelGroups }) {
     this.height = height;
+    this.width = width;
     this.cellLabelGroups = cellLabelGroups;
     this.cellLabels = flattenCellLabelGroups(cellLabelGroups);
   }

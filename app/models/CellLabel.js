@@ -89,4 +89,5 @@ export default class CellLabel {
   }
 }
 
+CellLabel.WIDTH = WIDTH;
 CellLabel.HEIGHT = HEIGHT;
