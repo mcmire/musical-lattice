@@ -24,19 +24,19 @@ export default class Ratio {
   }
 
   goEast() {
-    return this.constructor.wrap(this.rational.multiplyBy(3));
+    return this.constructor.wrap(this.rational.multiplyBy(3).divideBy(2));
   }
 
   goWest() {
-    return this.constructor.wrap(this.rational.divideBy(3));
+    return this.constructor.wrap(this.rational.divideBy(3).multiplyBy(2));
   }
 
   goNortheast() {
-    return this.constructor.wrap(this.rational.multiplyBy(5));
+    return this.constructor.wrap(this.rational.multiplyBy(5).divideBy(4));
   }
 
   goSouthwest() {
-    return this.constructor.wrap(this.rational.divideBy(5));
+    return this.constructor.wrap(this.rational.divideBy(5).multiplyBy(4));
   }
 
   toArray() {

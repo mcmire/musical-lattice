@@ -21,10 +21,6 @@ export default class Rational {
       return this._reduceBy(3);
     } else if (this.top % 5 === 0 && this.bottom % 5 === 0) {
       return this._reduceBy(5);
-    } else if (this.toNumber() >= 2) {
-      return this.divideBy(2);
-    } else if (this.toNumber() < 1) {
-      return this.multiplyBy(2);
     } else {
       return this;
     }
