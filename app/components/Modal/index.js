@@ -16,6 +16,7 @@ class Modal extends React.Component {
         show={this.props.isOpen}
         onShow={this._onShow}
         backdropClassName={styles.backdrop}
+        onEscapeKeyDown={this.props.onClose}
       >
         <div styleName="dialog-wrapper" onClick={this.props.onClose}>
           <div styleName="dialog">
