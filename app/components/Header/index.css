@@ -4,7 +4,7 @@
   opacity: 0.3;
   position: absolute;
   top: 30px;
-  transition: opacity linear 300ms;
+  transition: opacity linear 200ms;
   z-index: 10;
 }
 

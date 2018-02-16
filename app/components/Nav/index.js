@@ -21,7 +21,12 @@ class Nav extends React.Component {
     return (
       <ul styleName="root">
         <li>
-          <Tooltip placement="left" mouseLeaveDelay={0} overlay="What is this?">
+          <Tooltip
+            placement="left"
+            mouseLeaveDelay={0}
+            overlay="What is this?"
+            prefixCls="tooltip"
+          >
             <a href="#" onClick={this._openModal}>
               <Icon use="help" styleName="help-icon" />
             </a>

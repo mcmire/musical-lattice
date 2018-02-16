@@ -3,6 +3,7 @@
 
   font-family: "Roboto Condensed";
   opacity: 0.3;
+  transition: opacity linear 200ms;
   position: absolute;
   right: 30px;
   text-align: right;

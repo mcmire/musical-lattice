@@ -1,6 +1,5 @@
 @import "~normalize.css";
-@import "~rc-tooltip/assets/bootstrap.css";
-@import "./rc-tooltip-overrides.css";
+@import "./tooltip.css";
 
 :global * {
   box-sizing: border-box;
