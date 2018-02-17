@@ -4,6 +4,7 @@ import { buildLattice } from "../../models/Lattice";
 import Header from "../Header";
 import Nav from "../Nav";
 import Honeycomb from "../Honeycomb";
+import Cell from "../Cell";
 
 class Home extends React.Component {
   constructor(props) {

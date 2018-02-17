@@ -112,6 +112,7 @@ Cell.propTypes = {
   zIndex: PropTypes.number.isRequired,
   onMouseEnter: PropTypes.func.isRequired,
   onMouseDown: PropTypes.func.isRequired,
+  onMouseLeave: PropTypes.func.isRequired,
   isEnabled: PropTypes.bool.isRequired
 };
 

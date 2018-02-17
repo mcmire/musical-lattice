@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="147px" height="165px" viewBox="0 0 147 165" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+    <title>Anatomy of a cell</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Legend-v2" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Anatomy-of-a-cell">
+            <g id="Hex-Cell-Tri-Full" transform="translate(-7.000000, 43.000000)">
+                <g id="CH11-g" transform="translate(8.000000, 0.000000)" fill="#EDEDED" stroke="#FFFFFF">
+                    <polygon id="Polygon" points="52 0 104 30 104 90 52 120 3.01980663e-14 90 -1.77635684e-15 30"></polygon>
+                </g>
+                <text id="Frequency" font-family="Roboto-Light, Roboto" font-size="14" font-weight="300" fill="#8169F2">
+                    <tspan x="44.4824219" y="102">1485</tspan>
+                </text>
+                <g id="Fraction" transform="translate(26.000000, 31.000000)" fill="#00CCEC" font-family="Roboto-Medium, Roboto" font-weight="400">
+                    <text id="Denominator" font-size="32" letter-spacing="-1">
+                        <tspan x="50" y="45">8</tspan>
+                    </text>
+                    <text id="Solidus" transform="translate(42.500000, 25.500000) rotate(35.000000) translate(-42.500000, -25.500000) " font-size="45">
+                        <tspan x="36.8530273" y="41">|</tspan>
+                    </text>
+                    <text id="Numerator" font-size="32" letter-spacing="-1">
+                        <tspan x="0.625" y="32">27</tspan>
+                    </text>
+                </g>
+                <text id="Name" font-family="Roboto-Medium, Roboto" font-size="16" font-weight="400">
+                    <tspan x="46.1171875" y="25" fill="#F07272">#</tspan>
+                    <tspan x="55.8828125" y="25" fill="#CBBD0F">6</tspan>
+                    <tspan x="64.96875" y="25" fill="#6AD712">+</tspan>
+                </text>
+            </g>
+            <g id="Group" transform="translate(2.000000, 8.000000)">
+                <polygon id="Path-2" fill="#F07272" points="8.82714844 16.2099609 20.8271484 16.2099609 36.5410156 46.5859375"></polygon>
+                <g id="Group-2">
+                    <circle id="Oval" stroke="#FFFFFF" fill="#F07272" cx="15" cy="15" r="15"></circle>
+                    <text id="1" font-family="Roboto-Medium, Roboto" font-size="20" font-weight="400" fill="#FFFFFF">
+                        <tspan x="9.31640625" y="22">1</tspan>
+                    </text>
+                </g>
+            </g>
+            <g id="Group-Copy" transform="translate(38.000000, 1.000000)">
+                <polygon id="Path-2" fill="#CBBD0F" points="9.47265625 15.8134766 21.4726562 15.8134766 15.5410156 50.5859375"></polygon>
+                <g id="Group-3">
+                    <circle id="Oval" stroke="#FFFFFF" fill="#CBBD0F" cx="15" cy="15" r="15"></circle>
+                    <text id="2" font-family="Roboto-Medium, Roboto" font-size="20" font-weight="400" fill="#FFFFFF">
+                        <tspan x="9.31640625" y="22">2</tspan>
+                    </text>
+                </g>
+            </g>
+            <g id="Group-Copy-2" transform="translate(68.000000, 8.000000)">
+                <polygon id="Path-2" fill="#6AD712" points="15.3095703 14.8818359 27.3095703 14.8818359 0.5859375 47.2324219"></polygon>
+                <g id="Group-4" transform="translate(6.000000, 0.000000)">
+                    <circle id="Oval" stroke="#FFFFFF" fill="#6AD712" cx="15" cy="15" r="15"></circle>
+                    <text id="3" font-family="Roboto-Medium, Roboto" font-size="20" font-weight="400" fill="#FFFFFF">
+                        <tspan x="9.31640625" y="22">3</tspan>
+                    </text>
+                </g>
+            </g>
+            <g id="Group-Copy-3" transform="translate(92.000000, 86.000000)">
+                <polygon id="Path-2" fill="#00CCEC" transform="translate(19.932129, 15.000000) rotate(90.000000) translate(-19.932129, -15.000000) " points="13.9321289 -4.55712891 25.9321289 -4.55712891 19.9321289 34.5571289"></polygon>
+                <g id="Group-5" transform="translate(24.000000, 0.000000)">
+                    <circle id="Oval" stroke="#FFFFFF" fill="#00CCEC" cx="15" cy="15" r="15"></circle>
+                    <text id="4" font-family="Roboto-Medium, Roboto" font-size="20" font-weight="400" fill="#FFFFFF">
+                        <tspan x="9.31640625" y="22">4</tspan>
+                    </text>
+                </g>
+            </g>
+            <g id="Group-Copy-4" transform="translate(76.000000, 123.000000)">
+                <polygon id="Path-2" fill="#8169F2" transform="translate(27.688965, 16.804199) rotate(90.000000) translate(-27.688965, -16.804199) " points="23.4931641 -10.6210937 31.8847656 -10.6210937 27.6889648 44.2294922"></polygon>
+                <g id="Group-6" transform="translate(40.000000, 0.000000)">
+                    <circle id="Oval" stroke="#FFFFFF" fill="#8169F2" cx="15" cy="15" r="15"></circle>
+                    <text id="5" font-family="Roboto-Medium, Roboto" font-size="20" font-weight="400" fill="#FFFFFF">
+                        <tspan x="9.31640625" y="22">5</tspan>
+                    </text>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

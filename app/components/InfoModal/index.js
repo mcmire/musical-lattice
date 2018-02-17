@@ -1,7 +1,10 @@
 import React from "react";
 import PropTypes from "prop-types";
+import CSSModules from "react-css-modules";
 
 import Modal from "../Modal";
+import anatomyOfACell from "../../svg/anatomy-of-a-cell.svg";
+import styles from "./index.css";
 
 class InfoModal extends React.Component {
   render() {
@@ -38,30 +41,35 @@ class InfoModal extends React.Component {
           on your keyboard. (You can press Shift-K to switch back.)
         </p>
         <h2>What do the labels on each cell mean?</h2>
+        <p styleName="centered-text">
+          <img src={anatomyOfACell} />
+        </p>
+        <p>Each cell on the lattice has the following properties:</p>
+        <ol>
+          <li styleName="color-1">
+            Offset in # of semitones (1 semitone = 25/24), expressed by some
+            number of #'s or b's
+          </li>
+          <li styleName="color-2">
+            Pitch in the conventional Western 8-note major scale, expressed by a
+            number from 1 to 7, beginning on the tonic
+          </li>
+          <li styleName="color-3">
+            Offset in # of syntonic commas (1 comma = 81/80), expressed by some
+            number of +’s or -’s
+          </li>
+          <li styleName="color-4">
+            Relationship to the tonic’s frequency, expressed as an improper
+            fraction
+          </li>
+          <li styleName="color-5">
+            Frequency in hertz
+          </li>
+        </ol>
         <p>
           The cell marked 1/1 is the <i>tonic</i>, by default set to a frequency
           of 440hz (the standard for equal-temperament tuning).
         </p>
-        <p>Each cell on the lattice has the following properties:</p>
-        <ul>
-          <li>
-            Pitch in the conventional Western 8-note major scale, expressed by a
-            number from 1 to 7, beginning on the tonic
-          </li>
-          <li>
-            Offset in # of semitones (1 semitone = 25/24), expressed by some
-            number of ♯ or ♭
-          </li>
-          <li>
-            Offset in # of syntonic commas (1 comma = 81/80), expressed by some
-            number of +’s or -’s
-          </li>
-          <li>
-            Relationship to the tonic’s frequency, expressed as an improper
-            fraction
-          </li>
-          <li>Frequency in hertz</li>
-        </ul>
         <h2>Why are the cells arranged this way?</h2>
         <p>
           Each cell is directly related to the cells around it in frequency in
@@ -69,16 +77,16 @@ class InfoModal extends React.Component {
         </p>
         <ul>
           <li>
-            Moving a cell to the east multiplies the frequency by 3 and raises
+            Moving a cell to the east multiplies the frequency by 3/2 and raises
             the pitch by a <b>perfect fifth</b>.
           </li>
           <li>
-            Moving a cell to the northeast multiplies the frequency by 5 and
+            Moving a cell to the northeast multiplies the frequency by 5/4 and
             raises the pitch by a <b>major third</b>.
           </li>
           <li>
-            Moving a cell to the northwest multiplies the frequency by 5/3 and
-            raises the pitch by a <b>major sixth</b>.
+            Moving a cell to the northwest multiplies the frequency by 5/6 and
+            lowers the pitch by a <b>minor third</b>.
           </li>
         </ul>
         <p>
@@ -97,18 +105,14 @@ class InfoModal extends React.Component {
           </li>
         </ul>
         <p>
-          Of course, for any of these relationships, reversing the direction
-          results in a lowered pitch by the same amount.
-        </p>
-        <p>
-          To answer the question, although there are different ways to represent
-          connections between notes in just intonation, the lattice is a
-          particularly helpful diagram because a triangle of pitches pointing
-          upward forms a major triad whereas a triangle pointing downward forms
-          a minor triad. And because chords are either a fourth/fifth or a
-          major/minor third away, it’s much easier with this layout to
-          understand why chord progressions like I-IV-V-I, I-V-vi-VI-I,
-          iii-vi-ii-V-I, or even I-VI#-ii-V-I are so prevalent in music.
+          Although there are different ways to represent connections between
+          notes in just intonation, the lattice is a particularly helpful
+          diagram because a triangle of pitches pointing upward forms a major
+          triad whereas a triangle pointing downward forms a minor triad. And
+          because chords are either a fourth/fifth or a major/minor third away,
+          it’s much easier with this layout to understand why chord progressions
+          like I-IV-V-I, I-V-vi-VI-I, iii-vi-ii-V-I, or even I-VI#-ii-V-I are so
+          prevalent in music.
         </p>
         <h2>Credit</h2>
         <p>
@@ -131,4 +135,4 @@ InfoModal.propTypes = {
   onClose: PropTypes.func.isRequired
 };
 
-export default InfoModal;
+export default CSSModules(InfoModal, styles);
