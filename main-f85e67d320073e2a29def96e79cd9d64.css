@@ -666,245 +666,149 @@ template {
 [hidden] {
   display: none;
 }
-.rc-tooltip.rc-tooltip-zoom-enter,
-.rc-tooltip.rc-tooltip-zoom-leave {
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fade-out {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+.tooltip {
+  -webkit-font-smoothing: auto;
   display: block;
-}
-.rc-tooltip-zoom-enter,
-.rc-tooltip-zoom-appear {
-  opacity: 0;
-  -webkit-animation-duration: 0.3s;
-          animation-duration: 0.3s;
-  -webkit-animation-fill-mode: both;
-          animation-fill-mode: both;
-  -webkit-animation-timing-function: cubic-bezier(0.18, 0.89, 0.32, 1.28);
-          animation-timing-function: cubic-bezier(0.18, 0.89, 0.32, 1.28);
-  -webkit-animation-play-state: paused;
-          animation-play-state: paused;
-}
-.rc-tooltip-zoom-leave {
-  -webkit-animation-duration: 0.3s;
-          animation-duration: 0.3s;
-  -webkit-animation-fill-mode: both;
-          animation-fill-mode: both;
-  -webkit-animation-timing-function: cubic-bezier(0.6, -0.3, 0.74, 0.05);
-          animation-timing-function: cubic-bezier(0.6, -0.3, 0.74, 0.05);
-  -webkit-animation-play-state: paused;
-          animation-play-state: paused;
-}
-.rc-tooltip-zoom-enter.rc-tooltip-zoom-enter-active,
-.rc-tooltip-zoom-appear.rc-tooltip-zoom-appear-active {
-  -webkit-animation-name: rcToolTipZoomIn;
-          animation-name: rcToolTipZoomIn;
-  -webkit-animation-play-state: running;
-          animation-play-state: running;
-}
-.rc-tooltip-zoom-leave.rc-tooltip-zoom-leave-active {
-  -webkit-animation-name: rcToolTipZoomOut;
-          animation-name: rcToolTipZoomOut;
-  -webkit-animation-play-state: running;
-          animation-play-state: running;
-}
-@-webkit-keyframes rcToolTipZoomIn {
-  0% {
-    opacity: 0;
-    -webkit-transform-origin: 50% 50%;
-            transform-origin: 50% 50%;
-    -webkit-transform: scale(0, 0);
-            transform: scale(0, 0);
-  }
-  100% {
-    opacity: 1;
-    -webkit-transform-origin: 50% 50%;
-            transform-origin: 50% 50%;
-    -webkit-transform: scale(1, 1);
-            transform: scale(1, 1);
-  }
-}
-@keyframes rcToolTipZoomIn {
-  0% {
-    opacity: 0;
-    -webkit-transform-origin: 50% 50%;
-            transform-origin: 50% 50%;
-    -webkit-transform: scale(0, 0);
-            transform: scale(0, 0);
-  }
-  100% {
-    opacity: 1;
-    -webkit-transform-origin: 50% 50%;
-            transform-origin: 50% 50%;
-    -webkit-transform: scale(1, 1);
-            transform: scale(1, 1);
-  }
-}
-@-webkit-keyframes rcToolTipZoomOut {
-  0% {
-    opacity: 1;
-    -webkit-transform-origin: 50% 50%;
-            transform-origin: 50% 50%;
-    -webkit-transform: scale(1, 1);
-            transform: scale(1, 1);
-  }
-  100% {
-    opacity: 0;
-    -webkit-transform-origin: 50% 50%;
-            transform-origin: 50% 50%;
-    -webkit-transform: scale(0, 0);
-            transform: scale(0, 0);
-  }
-}
-@keyframes rcToolTipZoomOut {
-  0% {
-    opacity: 1;
-    -webkit-transform-origin: 50% 50%;
-            transform-origin: 50% 50%;
-    -webkit-transform: scale(1, 1);
-            transform: scale(1, 1);
-  }
-  100% {
-    opacity: 0;
-    -webkit-transform-origin: 50% 50%;
-            transform-origin: 50% 50%;
-    -webkit-transform: scale(0, 0);
-            transform: scale(0, 0);
-  }
-}
-.rc-tooltip {
-  position: absolute;
-  z-index: 1070;
-  display: block;
-  visibility: visible;
-  font-size: 12px;
+  font-family: Roboto;
+  font-size: 14px;
+  font-weight: 100;
   line-height: 1.5;
-  opacity: 0.9;
+  opacity: 1;
+  position: absolute;
+  text-transform: normal;
+  animation: fade-in linear 200ms;
+  z-index: 1070;
 }
-.rc-tooltip-hidden {
-  display: none;
+.tooltip-hidden {
+  opacity: 0;
+  animation: fade-out linear 200ms;
 }
-.rc-tooltip-placement-top,
-.rc-tooltip-placement-topLeft,
-.rc-tooltip-placement-topRight {
+.tooltip-placement-top,
+.tooltip-placement-topLeft,
+.tooltip-placement-topRight {
   padding: 5px 0 9px 0;
 }
-.rc-tooltip-placement-right,
-.rc-tooltip-placement-rightTop,
-.rc-tooltip-placement-rightBottom {
+.tooltip-placement-right,
+.tooltip-placement-rightTop,
+.tooltip-placement-rightBottom {
   padding: 0 5px 0 9px;
 }
-.rc-tooltip-placement-bottom,
-.rc-tooltip-placement-bottomLeft,
-.rc-tooltip-placement-bottomRight {
+.tooltip-placement-bottom,
+.tooltip-placement-bottomLeft,
+.tooltip-placement-bottomRight {
   padding: 9px 0 5px 0;
 }
-.rc-tooltip-placement-left,
-.rc-tooltip-placement-leftTop,
-.rc-tooltip-placement-leftBottom {
+.tooltip-placement-left,
+.tooltip-placement-leftTop,
+.tooltip-placement-leftBottom {
   padding: 0 9px 0 5px;
 }
-.rc-tooltip-inner {
-  padding: 8px 10px;
-  color: #fff;
-  text-align: left;
-  text-decoration: none;
+.tooltip-inner {
   background-color: #373737;
-  border-radius: 6px;
-  box-shadow: 0 0 4px rgba(0, 0, 0, 0.17);
+  border-radius: 0;
+  box-shadow: none;
+  color: white;
   min-height: 34px;
+  padding: 8px 10px;
+  text-align: center;
+  text-decoration: none;
 }
-.rc-tooltip-arrow {
-  position: absolute;
-  width: 0;
-  height: 0;
+.tooltip-arrow {
   border-color: transparent;
   border-style: solid;
+  height: 0;
+  position: absolute;
+  width: 0;
 }
-.rc-tooltip-placement-top .rc-tooltip-arrow,
-.rc-tooltip-placement-topLeft .rc-tooltip-arrow,
-.rc-tooltip-placement-topRight .rc-tooltip-arrow {
+.tooltip-placement-top .tooltip-arrow,
+.tooltip-placement-topLeft .tooltip-arrow,
+.tooltip-placement-topRight .tooltip-arrow {
   bottom: 4px;
   margin-left: -5px;
   border-width: 5px 5px 0;
   border-top-color: #373737;
 }
-.rc-tooltip-placement-top .rc-tooltip-arrow {
+.tooltip-placement-top .tooltip-arrow {
   left: 50%;
 }
-.rc-tooltip-placement-topLeft .rc-tooltip-arrow {
+.tooltip-placement-topLeft .tooltip-arrow {
   left: 15%;
 }
-.rc-tooltip-placement-topRight .rc-tooltip-arrow {
+.tooltip-placement-topRight .tooltip-arrow {
   right: 15%;
 }
-.rc-tooltip-placement-right .rc-tooltip-arrow,
-.rc-tooltip-placement-rightTop .rc-tooltip-arrow,
-.rc-tooltip-placement-rightBottom .rc-tooltip-arrow {
+.tooltip-placement-right .tooltip-arrow,
+.tooltip-placement-rightTop .tooltip-arrow,
+.tooltip-placement-rightBottom .tooltip-arrow {
   left: 4px;
   margin-top: -5px;
   border-width: 5px 5px 5px 0;
   border-right-color: #373737;
 }
-.rc-tooltip-placement-right .rc-tooltip-arrow {
+.tooltip-placement-right .tooltip-arrow {
   top: 50%;
 }
-.rc-tooltip-placement-rightTop .rc-tooltip-arrow {
+.tooltip-placement-rightTop .tooltip-arrow {
   top: 15%;
   margin-top: 0;
 }
-.rc-tooltip-placement-rightBottom .rc-tooltip-arrow {
+.tooltip-placement-rightBottom .tooltip-arrow {
   bottom: 15%;
 }
-.rc-tooltip-placement-left .rc-tooltip-arrow,
-.rc-tooltip-placement-leftTop .rc-tooltip-arrow,
-.rc-tooltip-placement-leftBottom .rc-tooltip-arrow {
-  right: 4px;
-  margin-top: -5px;
+.tooltip-placement-left .tooltip-arrow,
+.tooltip-placement-leftTop .tooltip-arrow,
+.tooltip-placement-leftBottom .tooltip-arrow {
   border-width: 5px 0 5px 5px;
   border-left-color: #373737;
+  margin-top: -5px;
+  right: 4px;
 }
-.rc-tooltip-placement-left .rc-tooltip-arrow {
+.tooltip-placement-left .tooltip-arrow {
   top: 50%;
 }
-.rc-tooltip-placement-leftTop .rc-tooltip-arrow {
+.tooltip-placement-leftTop .tooltip-arrow {
   top: 15%;
   margin-top: 0;
 }
-.rc-tooltip-placement-leftBottom .rc-tooltip-arrow {
+.tooltip-placement-leftBottom .tooltip-arrow {
   bottom: 15%;
 }
-.rc-tooltip-placement-bottom .rc-tooltip-arrow,
-.rc-tooltip-placement-bottomLeft .rc-tooltip-arrow,
-.rc-tooltip-placement-bottomRight .rc-tooltip-arrow {
-  top: 4px;
-  margin-left: -5px;
-  border-width: 0 5px 5px;
+.tooltip-placement-bottom .tooltip-arrow,
+.tooltip-placement-bottomLeft .tooltip-arrow,
+.tooltip-placement-bottomRight .tooltip-arrow {
   border-bottom-color: #373737;
+  border-width: 0 5px 5px;
+  margin-left: -5px;
+  top: 4px;
 }
-.rc-tooltip-placement-bottom .rc-tooltip-arrow {
+.tooltip-placement-bottom .tooltip-arrow {
   left: 50%;
 }
-.rc-tooltip-placement-bottomLeft .rc-tooltip-arrow {
+.tooltip-placement-bottomLeft .tooltip-arrow {
   left: 15%;
 }
-.rc-tooltip-placement-bottomRight .rc-tooltip-arrow {
+.tooltip-placement-bottomRight .tooltip-arrow {
   right: 15%;
-}
-.rc-tooltip {
-  font-family: Roboto;
-  -webkit-font-smoothing: auto;
-  font-weight: 100;
-  opacity: 0.95;
-  font-size: 14px;
-  line-height: 1.5;
-  text-transform: normal;
-}
-
-.rc-tooltip-inner {
-  box-shadow: none;
-  border-radius: 0;
-  padding: 8px 10px;
-  color: white;
-  min-height: 34px;
-  text-align: center;
 }
 * {
   -webkit-box-sizing: border-box;
@@ -932,6 +836,14 @@ li {
   line-height: 1.6;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5 {
+  line-height: 1.4;
+}
+
 p {
   margin-top: 0;
   margin-bottom: 1em;
@@ -944,4 +856,4 @@ ul {
 li {
   margin-bottom: 0.5em;
 }
-/*# sourceMappingURL=main-094a2b7900755a2b2c0900dbbc06f29b.css.map*/
+/*# sourceMappingURL=main-f85e67d320073e2a29def96e79cd9d64.css.map*/
