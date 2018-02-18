@@ -1,4 +1,5 @@
 .root {
+  font-family: "Roboto";
   left: 30px;
   line-height: 1.5;
   opacity: 0.3;
@@ -34,5 +35,9 @@
   font-size: 18px;
   font-weight: 400;
   font-style: italic;
-  font-family: "Roboto";
+  margin-bottom: 15px;
+}
+
+.source {
+  font-size: 12px;
 }

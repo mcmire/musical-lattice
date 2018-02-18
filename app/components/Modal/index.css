@@ -51,6 +51,7 @@
 
 .close-link:hover {
   opacity: 1;
+  border: none;
 }
 
 .close-link i {

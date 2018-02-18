@@ -7,17 +7,10 @@
 
 :global a {
   color: #0366d6;
+  text-decoration: none;
 }
 
 :global a:hover {
-  text-decoration: none;
-}
-
-:global p a {
-  text-decoration: none;
-}
-
-:global p a:hover {
   border-bottom: 1px solid currentcolor;
 }
 
