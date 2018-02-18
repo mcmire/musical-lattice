@@ -1,17 +1,21 @@
 # Musical Lattice
 
-This project aims to provide an interactive version of the just intonation
-lattice that musicians throughout time have discovered and rediscovered.
+This is an interactive diagram designed to show relationships between musical
+pitches (tuned to [5-limit][5l] [just intonation][ji]).
 
-There will be more here later, but for now, the layout of this lattice was
-inspired by [Gary Garrett's blog](http://www.garygarrett.me/?p=995) that talks
-about how it was constructed.
+[5l]: https://en.wikipedia.org/wiki/Five-limit_tuning
+[ji]: https://en.wikipedia.org/wiki/Just_intonation
 
 ## Architecture
 
 * React
-* Tone.js
-* CSS Modules via PostCSS
-* JSHint
-* Prettier
+* [Tone.js][tone.js]
+* [CSS Modules via PostCSS][react-css-modules]
 * Jest
+
+[tone.js]: https://github.com/Tonejs/Tone.js
+[react-css-modules]: https://github.com/gajus/react-css-modules
+
+## Credit
+
+[Gary Garrett](http://www.garygarrett.me/?p=91)
