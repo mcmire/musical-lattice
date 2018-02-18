@@ -8,6 +8,12 @@ import Fade from "../Fade";
 import styles from "./index.css";
 
 class Modal extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this._onClickDialog = this._onClickDialog.bind(this);
+  }
+
   render() {
     return (
       <ReactModal
@@ -19,7 +25,7 @@ class Modal extends React.Component {
         onEscapeKeyDown={this.props.onClose}
       >
         <div styleName="dialog-wrapper" onClick={this.props.onClose}>
-          <div styleName="dialog">
+          <div styleName="dialog" onClick={this._onClickDialog}>
             <div styleName="header-actions">
               <a href="#" onClick={this.props.onClose} styleName="close-link">
                 <Icon use="close" />
@@ -41,6 +47,10 @@ class Modal extends React.Component {
         </header>
       );
     }
+  }
+
+  _onClickDialog(event) {
+    event.stopPropagation();
   }
 }
 

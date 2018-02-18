@@ -9,10 +9,7 @@ import styles from "./index.css";
 class InfoModal extends React.Component {
   render() {
     return (
-      <Modal
-        isOpen={this.props.isOpen}
-        onClose={this.props.onClose}
-      >
+      <Modal isOpen={this.props.isOpen} onClose={this.props.onClose}>
         <h2>What am I looking at?</h2>
         <p>
           This is an interactive diagram designed to show relationships between
@@ -48,7 +45,7 @@ class InfoModal extends React.Component {
         <ol>
           <li styleName="color-1">
             Offset in # of semitones (1 semitone = 25/24), expressed by some
-            number of #'s or b's
+            number of sharps (#) or flats (b)
           </li>
           <li styleName="color-2">
             Pitch in the conventional Western 8-note major scale, expressed by a
@@ -62,9 +59,7 @@ class InfoModal extends React.Component {
             Relationship to the tonic’s frequency, expressed as an improper
             fraction
           </li>
-          <li styleName="color-5">
-            Frequency in hertz
-          </li>
+          <li styleName="color-5">Frequency in hertz</li>
         </ol>
         <p>
           The cell marked 1/1 is the <i>tonic</i>, by default set to a frequency
@@ -113,6 +108,64 @@ class InfoModal extends React.Component {
           it’s much easier with this layout to understand why chord progressions
           like I-IV-V-I, I-V-vi-VI-I, iii-vi-ii-V-I, or even I-VI#-ii-V-I are so
           prevalent in music.
+        </p>
+        <h2>
+          What is the significance of multiplying/dividing frequencies by 3 and
+          5?
+        </h2>
+        <p>
+          We perceive sound as a result of movement in some physical object,
+          which causes waves to cascade through the air, which applies pressure
+          to our eardrums and ultimately gets interpreted by our brain as noise.
+          If these waves move through the air at a high enough frequency —
+          greater than about 20Hz and up to about 20Khz — we hear the sound as a
+          pitch.
+        </p>
+        <p>
+          The purest sound wave, one that produces a pitch, is a sine wave. You
+          might have heard it before; it sounds very artificial and unnatural,
+          but that’s because it is. When you hear an acoustic instrument such as
+          piano, guitar, flute, or saxophone, it sounds a lot more real, more
+          “alive”. Why? Because if you play a single note on one of these
+          instruments, you’re not just hearing one pitch or sound wave, you’re
+          actually hearing multiple pitches and sound waves packed into one.
+        </p>
+        <p>
+          Take an A on the piano, for instance. When you hear the A, that’s not
+          all you’re hearing; you’re actually hearing the A above it, the E
+          above that, the A above that, the C# above that, etc. All of these
+          notes are in the A, even though your brain perceives them as one note.
+        </p>
+        <p>
+          Why is this? Because math. If you take a frequency, any frequency at
+          all, and multiply it by a power of 2, you will hear a pitch that is
+          one or more <i>octaves</i> above the first pitch. Multiply the
+          frequency by a power of 3 and you get a <i>fifth</i>. Multiply by a
+          power of 5 and you get a <i>major third</i>. (These are musical terms
+          for <i>intervals</i>, distances between different pitches.)
+        </p>
+        <p>
+          The series of pitches you get by doing this kind of math is called
+          the{" "}
+          <a
+            href="https://en.wikipedia.org/wiki/Harmonic_series_(music)"
+            target="_blank"
+          >
+            overtone
+          </a>{" "}
+          series. The notes that correspond to these pitches are, at least in
+          music theory circles, associated with brightness and happiness. The
+          opposite of this is called the{" "} <i>undertone</i> series, and you
+          obtain it by dividing instead of multiplying. These notes are
+          associated with darkness and sadness.
+        </p>
+        <p>
+          So the lattice is a visualization of the results you get by applying
+          math to the frequency 440Hz (a standard frequency) to produce various
+          pitches. Some of these pitches sound “out of tune”, but that’s another
+          topic for another day. Just know that pitches that are closer together
+          on the lattice will sound more in tune with each other than those that
+          are far away.
         </p>
         <h2>Credit</h2>
         <p>

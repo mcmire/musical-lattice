@@ -7,13 +7,13 @@
     <g id="Legend-v2" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
         <g id="Anatomy-of-a-cell">
             <g id="Hex-Cell-Tri-Full" transform="translate(-7.000000, 43.000000)">
-                <g id="CH11-g" transform="translate(8.000000, 0.000000)" fill="#EDEDED" stroke="#FFFFFF">
+                <g id="CH11-g" transform="translate(8.000000, 0.000000)" fill="#E6E6E6" stroke="#CCCCCC">
                     <polygon id="Polygon" points="52 0 104 30 104 90 52 120 3.01980663e-14 90 -1.77635684e-15 30"></polygon>
                 </g>
-                <text id="Frequency" font-family="Roboto-Light, Roboto" font-size="14" font-weight="300" fill="#8169F2">
+                <text id="Frequency" font-family="Roboto-Light, Roboto" font-size="14" font-weight="300" fill="#9282DE">
                     <tspan x="44.4824219" y="102">1485</tspan>
                 </text>
-                <g id="Fraction" transform="translate(26.000000, 31.000000)" fill="#00CCEC" font-family="Roboto-Medium, Roboto" font-weight="400">
+                <g id="Fraction" transform="translate(26.000000, 31.000000)" fill="#3CCAE0" font-family="Roboto-Medium, Roboto" font-weight="400">
                     <text id="Denominator" font-size="32" letter-spacing="-1">
                         <tspan x="50" y="45">8</tspan>
                     </text>
@@ -25,15 +25,15 @@
                     </text>
                 </g>
                 <text id="Name" font-family="Roboto-Medium, Roboto" font-size="16" font-weight="400">
-                    <tspan x="46.1171875" y="25" fill="#F07272">#</tspan>
+                    <tspan x="46.1171875" y="25" fill="#F36262">#</tspan>
                     <tspan x="55.8828125" y="25" fill="#CBBD0F">6</tspan>
                     <tspan x="64.96875" y="25" fill="#6AD712">+</tspan>
                 </text>
             </g>
             <g id="Group" transform="translate(2.000000, 8.000000)">
-                <polygon id="Path-2" fill="#F07272" points="8.82714844 16.2099609 20.8271484 16.2099609 36.5410156 46.5859375"></polygon>
+                <polygon id="Path-2" fill="#F36262" points="8.82714844 16.2099609 20.8271484 16.2099609 36.5410156 46.5859375"></polygon>
                 <g id="Group-2">
-                    <circle id="Oval" stroke="#FFFFFF" fill="#F07272" cx="15" cy="15" r="15"></circle>
+                    <circle id="Oval" stroke="#FFFFFF" fill="#F36262" cx="15" cy="15" r="15"></circle>
                     <text id="1" font-family="Roboto-Medium, Roboto" font-size="20" font-weight="400" fill="#FFFFFF">
                         <tspan x="9.31640625" y="22">1</tspan>
                     </text>
@@ -48,30 +48,30 @@
                     </text>
                 </g>
             </g>
-            <g id="Group-Copy-2" transform="translate(68.000000, 8.000000)">
-                <polygon id="Path-2" fill="#6AD712" points="15.3095703 14.8818359 27.3095703 14.8818359 0.5859375 47.2324219"></polygon>
-                <g id="Group-4" transform="translate(6.000000, 0.000000)">
-                    <circle id="Oval" stroke="#FFFFFF" fill="#6AD712" cx="15" cy="15" r="15"></circle>
+            <g id="Group-Copy-2" transform="translate(21.000000, 8.000000)">
+                <polygon id="Path-2" fill="#73C72F" points="62.3095703 14.8818359 74.3095703 14.8818359 47.5859375 47.2324219"></polygon>
+                <g id="Group-4">
+                    <circle id="Oval" stroke="#FFFFFF" fill="#73C72F" cx="68" cy="15" r="15"></circle>
                     <text id="3" font-family="Roboto-Medium, Roboto" font-size="20" font-weight="400" fill="#FFFFFF">
-                        <tspan x="9.31640625" y="22">3</tspan>
+                        <tspan x="62.3164062" y="22">3</tspan>
                     </text>
                 </g>
             </g>
             <g id="Group-Copy-3" transform="translate(92.000000, 86.000000)">
-                <polygon id="Path-2" fill="#00CCEC" transform="translate(19.932129, 15.000000) rotate(90.000000) translate(-19.932129, -15.000000) " points="13.9321289 -4.55712891 25.9321289 -4.55712891 19.9321289 34.5571289"></polygon>
+                <polygon id="Path-2" fill="#3CCAE0" transform="translate(19.932129, 15.000000) rotate(90.000000) translate(-19.932129, -15.000000) " points="13.9321289 -4.55712891 25.9321289 -4.55712891 19.9321289 34.5571289"></polygon>
                 <g id="Group-5" transform="translate(24.000000, 0.000000)">
-                    <circle id="Oval" stroke="#FFFFFF" fill="#00CCEC" cx="15" cy="15" r="15"></circle>
+                    <circle id="Oval" stroke="#FFFFFF" fill="#3CCAE0" cx="15" cy="15" r="15"></circle>
                     <text id="4" font-family="Roboto-Medium, Roboto" font-size="20" font-weight="400" fill="#FFFFFF">
-                        <tspan x="9.31640625" y="22">4</tspan>
+                        <tspan x="9.31640625" y="19">4</tspan>
                     </text>
                 </g>
             </g>
             <g id="Group-Copy-4" transform="translate(76.000000, 123.000000)">
-                <polygon id="Path-2" fill="#8169F2" transform="translate(27.688965, 16.804199) rotate(90.000000) translate(-27.688965, -16.804199) " points="23.4931641 -10.6210937 31.8847656 -10.6210937 27.6889648 44.2294922"></polygon>
+                <polygon id="Path-2" fill="#9282DE" transform="translate(27.688965, 16.804199) rotate(90.000000) translate(-27.688965, -16.804199) " points="23.4931641 -10.6210937 31.8847656 -10.6210937 27.6889648 44.2294922"></polygon>
                 <g id="Group-6" transform="translate(40.000000, 0.000000)">
-                    <circle id="Oval" stroke="#FFFFFF" fill="#8169F2" cx="15" cy="15" r="15"></circle>
+                    <circle id="Oval" stroke="#FFFFFF" fill="#9282DE" cx="15" cy="15" r="15"></circle>
                     <text id="5" font-family="Roboto-Medium, Roboto" font-size="20" font-weight="400" fill="#FFFFFF">
-                        <tspan x="9.31640625" y="22">5</tspan>
+                        <tspan x="9.31640625" y="19">5</tspan>
                     </text>
                 </g>
             </g>
