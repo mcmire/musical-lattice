@@ -817,17 +817,10 @@ template {
 
 a {
   color: #0366d6;
+  text-decoration: none;
 }
 
 a:hover {
-  text-decoration: none;
-}
-
-p a {
-  text-decoration: none;
-}
-
-p a:hover {
   border-bottom: 1px solid currentcolor;
 }
 
@@ -856,4 +849,4 @@ ul {
 li {
   margin-bottom: 0.5em;
 }
-/*# sourceMappingURL=main-f85e67d320073e2a29def96e79cd9d64.css.map*/
+/*# sourceMappingURL=main-8662b782a3c3a3af9608f428c7c6fe32.css.map*/

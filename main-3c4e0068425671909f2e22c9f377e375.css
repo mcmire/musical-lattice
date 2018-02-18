@@ -1,4 +1,5 @@
 .components-Header-__index__root__q3z7j {
+  font-family: "Roboto";
   left: 30px;
   line-height: 1.5;
   opacity: 0.3;
@@ -34,7 +35,11 @@
   font-size: 18px;
   font-weight: 400;
   font-style: italic;
-  font-family: "Roboto";
+  margin-bottom: 15px;
+}
+
+.components-Header-__index__source__1TPiF {
+  font-size: 12px;
 }
 .components-Fade-__index__fade__3DMMR {
   opacity: 0;
@@ -101,6 +106,7 @@
 
 .components-Modal-__index__close-link__2ft9j:hover {
   opacity: 1;
+  border: none;
 }
 
 .components-Modal-__index__close-link__2ft9j i {
@@ -319,4 +325,4 @@
   margin: 0 auto;
 }
 
-/*# sourceMappingURL=main-40aac9c519377ab6081e3feda99b3496.css.map*/
+/*# sourceMappingURL=main-3c4e0068425671909f2e22c9f377e375.css.map*/
