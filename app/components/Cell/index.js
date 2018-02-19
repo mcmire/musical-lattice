@@ -1,6 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
 import CSSModules from "react-css-modules";
+import StartAudioContext from "startaudiocontext";
+import Tone from "tone";
 
 import cellShapesFilePath from "../../svg/cell-shapes.svg";
 import CellLabel from "../../models/CellLabel";
@@ -19,6 +21,7 @@ class Cell extends React.Component {
   render() {
     return (
       <button
+        ref={element => (this.element = element)}
         className={this.props.className}
         styleName={this._styleName}
         style={{
@@ -45,6 +48,10 @@ class Cell extends React.Component {
         <div styleName="frequency">{this.props.label.formattedFrequency}</div>
       </button>
     );
+  }
+
+  componentDidMount() {
+    StartAudioContext(Tone.context, this.element);
   }
 
   get _styleName() {

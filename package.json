@@ -48,6 +48,7 @@
     "react-router-dom": "^4.2.2",
     "react-transition-group": "^2.2.1",
     "rmwc": "^1.1.2",
+    "startaudiocontext": "^1.2.1",
     "style-loader": "^0.20.1",
     "tone": "0.11.x",
     "typeface-roboto": "^0.0.54",
