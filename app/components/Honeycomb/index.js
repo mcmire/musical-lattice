@@ -138,15 +138,17 @@ class Honeycomb extends React.Component {
         const cellLabel = this.props.lattice.findCellBy(
           this.state.cellKeyMappings[event.keyCode]
         );
-        if (this._isCellEnabled(cellLabel)) {
-          this.setState(prevState => {
-            const keyActiveCells = {
-              ...prevState.keyActiveCells,
-              [cellLabel.name]: cellLabel
-            };
-            return { keyActiveCells };
-          });
-          this.props.synth.triggerAttack(cellLabel.frequency);
+        if (cellLabel != null) {
+          if (this._isCellEnabled(cellLabel)) {
+            this.setState(prevState => {
+              const keyActiveCells = {
+                ...prevState.keyActiveCells,
+                [cellLabel.name]: cellLabel
+              };
+              return { keyActiveCells };
+            });
+            this.props.synth.triggerAttack(cellLabel.frequency);
+          }
         }
       } else if (event.keyCode in OFFSET_DIRECTION_KEY_MAPPINGS) {
         event.preventDefault();
@@ -177,13 +179,15 @@ class Honeycomb extends React.Component {
         const cellLabel = this.props.lattice.findCellBy(
           this.state.cellKeyMappings[event.keyCode]
         );
-        if (this._isCellEnabled(cellLabel)) {
-          this.setState(prevState => {
-            const keyActiveCells = { ...prevState.keyActiveCells };
-            delete keyActiveCells[cellLabel.name];
-            return { keyActiveCells };
-          });
-          this.props.synth.triggerRelease(cellLabel.frequency);
+        if (cellLabel != null) {
+          if (this._isCellEnabled(cellLabel)) {
+            this.setState(prevState => {
+              const keyActiveCells = { ...prevState.keyActiveCells };
+              delete keyActiveCells[cellLabel.name];
+              return { keyActiveCells };
+            });
+            this.props.synth.triggerRelease(cellLabel.frequency);
+          }
         }
       }
     } else if (event.keyCode === KEYS.K) {
