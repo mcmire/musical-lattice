@@ -62,7 +62,7 @@
                 <g id="Group-5" transform="translate(24.000000, 0.000000)">
                     <circle id="Oval" stroke="#FFFFFF" fill="#3CCAE0" cx="15" cy="15" r="15"></circle>
                     <text id="4" font-family="Roboto-Medium, Roboto" font-size="20" font-weight="400" fill="#FFFFFF">
-                        <tspan x="9.31640625" y="19">4</tspan>
+                        <tspan x="9.31640625" y="22">4</tspan>
                     </text>
                 </g>
             </g>
@@ -71,7 +71,7 @@
                 <g id="Group-6" transform="translate(40.000000, 0.000000)">
                     <circle id="Oval" stroke="#FFFFFF" fill="#9282DE" cx="15" cy="15" r="15"></circle>
                     <text id="5" font-family="Roboto-Medium, Roboto" font-size="20" font-weight="400" fill="#FFFFFF">
-                        <tspan x="9.31640625" y="19">5</tspan>
+                        <tspan x="9.31640625" y="22">5</tspan>
                     </text>
                 </g>
             </g>

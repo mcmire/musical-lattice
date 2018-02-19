@@ -136,6 +136,32 @@
 .components-Modal-__index__body__1TnHI h2:not(:first-child) {
   margin-top: 30px;
 }
+.components-PlayButton-__index__root__22-R7 {
+  display: block;
+  line-height: 24px;
+  vertical-align: middle;
+  cursor: pointer;
+  margin: 0 auto 15px auto;
+  padding: 0;
+  background: #ededed;
+  border: 1px solid #cecece;
+  padding: 5px 10px;
+  border-radius: 2px;
+}
+
+.components-PlayButton-__index__play-icon__V0II5 {
+  vertical-align: middle;
+}
+.components-ChordPlayer-__index__root__1Us5l {
+
+}
+.components-IntervalPlayer-__index__root__2j_IJ {
+
+}
+.components-OvertoneSeriesPlayer-__index__root__1tISJ {
+}
+.components-UndertoneSeriesPlayer-__index__root__2FteT {
+}
 .components-InfoModal-__index__centered-text__1Ao7L {
   text-align: center;
 }
@@ -325,4 +351,4 @@
   margin: 0 auto;
 }
 
-/*# sourceMappingURL=main-3c4e0068425671909f2e22c9f377e375.css.map*/
+/*# sourceMappingURL=main-5ef2c22dd2744d770642aea088f8f026.css.map*/
