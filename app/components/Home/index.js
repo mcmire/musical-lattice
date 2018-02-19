@@ -17,7 +17,7 @@ class Home extends React.Component {
       oscillator: {
         type: "sine",
         frequency: 440,
-        volume: -7
+        volume: -20
       },
       envelope: {
         attack: 0.05,
