@@ -21,6 +21,28 @@ describe("Location", () => {
     });
   });
 
+  describe("#add", () => {
+    describe("given a Location", () => {
+      it("returns a new Location offset by the given Location", () => {
+        const location = new Location([1, 1]);
+        const newLocation = location.add(new Location([1, 1]));
+
+        expect(newLocation.x).toBe(2);
+        expect(newLocation.y).toBe(2);
+      });
+    });
+
+    describe("given a tuple", () => {
+      it("returns a new Location offset by the given tuple", () => {
+        const location = new Location([1, 1]);
+        const newLocation = location.add([1, 1]);
+
+        expect(newLocation.x).toBe(2);
+        expect(newLocation.y).toBe(2);
+      });
+    });
+  });
+
   describe("#goEast", () => {
     it("returns a Location with x incremented by 1", () => {
       const location = new Location([1, 2]);

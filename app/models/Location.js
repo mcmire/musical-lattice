@@ -12,6 +12,14 @@ export default class Location {
     this.y = y;
   }
 
+  add(other) {
+    const offsetLocation = this.constructor.wrap(other);
+    return new this.constructor([
+      this.x + offsetLocation.x,
+      this.y + offsetLocation.y
+    ]);
+  }
+
   goEast() {
     return new this.constructor([this.x + 1, this.y]);
   }

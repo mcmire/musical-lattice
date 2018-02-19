@@ -40,7 +40,9 @@ class InfoModal extends React.Component {
         <p>
           Pressing the K key on your keyboard will place the lattice in
           “keyboard” mode. From here you can play pitches by pressing any letter
-          on your keyboard. (You can press Shift-K to switch back.)
+          on your keyboard. You can use the arrow keys to reposition the
+          playable range of the lattice, or you can press Shift-K to switch
+          back.
         </p>
         <h2>What do the labels on each cell mean?</h2>
         <p styleName="centered-text">
