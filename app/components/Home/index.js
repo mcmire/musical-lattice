@@ -17,12 +17,12 @@ class Home extends React.Component {
       oscillator: {
         type: "sine",
         frequency: 440,
-        volume: -6
+        volume: -7
       },
       envelope: {
         attack: 0.05,
         decay: 0,
-        sustain: 0.5,
+        sustain: 1,
         release: 1.2
       }
     }).toMaster();
