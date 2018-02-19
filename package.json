@@ -49,7 +49,7 @@
     "react-transition-group": "^2.2.1",
     "rmwc": "^1.1.2",
     "style-loader": "^0.20.1",
-    "tone": "^0.12.63",
+    "tone": "0.11.x",
     "typeface-roboto": "^0.0.54",
     "typeface-roboto-condensed": "^0.0.54",
     "typeface-roboto-slab": "^0.0.54",

@@ -58,20 +58,6 @@ class Honeycomb extends React.Component {
       keyEnabledCellLocations: DEFAULT_KEY_ENABLED_CELL_LOCATIONS
     };
 
-    this.synth = new Tone.PolySynth(16, Tone.Synth, {
-      oscillator: {
-        type: "sine",
-        frequency: 440,
-        volume: -6
-      },
-      envelope: {
-        attack: 0.05,
-        decay: 0,
-        sustain: 0.5,
-        release: 1.2
-      }
-    }).toMaster();
-
     this._onGlobalKeyDown = this._onGlobalKeyDown.bind(this);
     this._onGlobalKeyUp = this._onGlobalKeyUp.bind(this);
     this._onCellMouseEnter = this._onCellMouseEnter.bind(this);
@@ -148,7 +134,7 @@ class Honeycomb extends React.Component {
           };
           return { keyActiveCells };
         });
-        this.synth.triggerAttack(cellLabel.frequency);
+        this.props.synth.triggerAttack(cellLabel.frequency);
       }
     }
   }
@@ -168,7 +154,7 @@ class Honeycomb extends React.Component {
             delete keyActiveCells[cellLabel.name];
             return { keyActiveCells };
           });
-          this.synth.triggerRelease(cellLabel.frequency);
+          this.props.synth.triggerRelease(cellLabel.frequency);
         }
       }
     } else if (event.keyCode === KEYS.K) {
@@ -181,8 +167,8 @@ class Honeycomb extends React.Component {
       const newState = {};
 
       if (this.state.mouseActiveCell != null) {
-        this.synth.triggerRelease(this.state.mouseActiveCell.frequency);
-        this.synth.triggerAttack(cellLabel.frequency);
+        this.props.synth.triggerRelease(this.state.mouseActiveCell.frequency);
+        this.props.synth.triggerAttack(cellLabel.frequency);
         newState.mouseActiveCell = cellLabel;
       }
 
@@ -199,7 +185,7 @@ class Honeycomb extends React.Component {
   _onCellMouseDown(cellLabel) {
     if (this._isCellEnabled(cellLabel)) {
       this.setState({ mouseActiveCell: cellLabel });
-      this.synth.triggerAttack(cellLabel.frequency);
+      this.props.synth.triggerAttack(cellLabel.frequency);
     }
   }
 
@@ -207,7 +193,7 @@ class Honeycomb extends React.Component {
     event.preventDefault();
 
     this.setState({ mouseActiveCell: null });
-    this.synth.releaseAll();
+    this.props.synth.releaseAll();
   }
 
   _determineZIndex(cellLabel) {
@@ -243,6 +229,7 @@ class Honeycomb extends React.Component {
 }
 
 Honeycomb.propTypes = {
+  synth: PropTypes.instanceOf(Tone.PolySynth),
   lattice: PropTypes.instanceOf(Lattice).isRequired,
   children: PropTypes.node.isRequired
 };

@@ -1,0 +1,16 @@
+.root {
+  display: block;
+  line-height: 24px;
+  vertical-align: middle;
+  cursor: pointer;
+  margin: 0 auto 15px auto;
+  padding: 0;
+  background: #ededed;
+  border: 1px solid #cecece;
+  padding: 5px 10px;
+  border-radius: 2px;
+}
+
+.play-icon {
+  vertical-align: middle;
+}

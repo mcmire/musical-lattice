@@ -3,10 +3,7 @@ const WIDTH_WITH_BORDER = WIDTH + 2;
 const HEIGHT = 120;
 const HEIGHT_WITH_BORDER = HEIGHT + 2;
 
-function roundToPrecision(number, precision) {
-  const factor = Math.pow(10, precision);
-  return (Math.round(number * factor) / factor).toString();
-}
+import roundToPrecision from "../util/roundToPrecision";
 
 export default class CellLabel {
   constructor({ note, viewport, position = null }) {
@@ -74,7 +71,7 @@ export default class CellLabel {
   }
 
   get formattedFrequency() {
-    return roundToPrecision(this.note.frequency, 2);
+    return roundToPrecision(this.note.frequency, 2).toString();
   }
 
   equals(other) {

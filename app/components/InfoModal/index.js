@@ -1,8 +1,13 @@
 import React from "react";
 import PropTypes from "prop-types";
 import CSSModules from "react-css-modules";
+import Tone from "tone";
 
 import Modal from "../Modal";
+import ChordPlayer from "../ChordPlayer";
+import IntervalPlayer from "../IntervalPlayer";
+import OvertoneSeriesPlayer from "../OvertoneSeriesPlayer";
+import UndertoneSeriesPlayer from "../UndertoneSeriesPlayer";
 import anatomyOfACell from "../../svg/anatomy-of-a-cell.svg";
 import styles from "./index.css";
 
@@ -48,7 +53,7 @@ class InfoModal extends React.Component {
             number of sharps (#) or flats (b)
           </li>
           <li styleName="color-2">
-            Pitch in the conventional Western 8-note major scale, expressed by a
+            Pitch in the conventional Western 7-note major scale, expressed by a
             number from 1 to 7, beginning on the tonic
           </li>
           <li styleName="color-3">
@@ -115,57 +120,152 @@ class InfoModal extends React.Component {
         </h2>
         <p>
           We perceive sound as a result of movement in some physical object,
-          which causes waves to cascade through the air, which applies pressure
-          to our eardrums and ultimately gets interpreted by our brain as noise.
-          If these waves move through the air at a high enough frequency —
-          greater than about 20Hz and up to about 20Khz — we hear the sound as a
+          which causes waves to cascade through the air, applying pressure to
+          our eardrums and ultimately getting converted into electrical signals
+          and fed into our brain. If these waves move through the air at a high
+          enough frequency — greater than about 20 times a second and up to
+          about 20,000 times a second — our brain will interpret the sound as a
           pitch.
         </p>
         <p>
-          The purest sound wave, one that produces a pitch, is a sine wave. You
-          might have heard it before; it sounds very artificial and unnatural,
-          but that’s because it is. When you hear an acoustic instrument such as
-          piano, guitar, flute, or saxophone, it sounds a lot more real, more
-          “alive”. Why? Because if you play a single note on one of these
-          instruments, you’re not just hearing one pitch or sound wave, you’re
-          actually hearing multiple pitches and sound waves packed into one.
+          For instance, the note that corresponds to the second string on a
+          guitar is an A. If you plucked this string, it would vibrate at about
+          440Hz. Here is what that sounds like:
+        </p>
+        <ChordPlayer synth={this.props.synth} frequencies={[440]} />
+        <p>
+          You will probably notice that this doesn't sound anything like a
+          guitar; it sounds very artificial and natural. Why? Because a guitar
+          string doesn't just vibrate at one frequency; it actually vibrates at
+          many faster frequencies, which we perceive as higher notes. When you
+          pluck the A string, at the same time, you're also hearing the A above
+          it, the E above that, the A above that, the C# above that, and so on.
         </p>
         <p>
-          Take an A on the piano, for instance. When you hear the A, that’s not
-          all you’re hearing; you’re actually hearing the A above it, the E
-          above that, the A above that, the C# above that, etc. All of these
-          notes are in the A, even though your brain perceives them as one note.
-        </p>
-        <p>
-          Why is this? Because math. If you take a frequency, any frequency at
-          all, and multiply it by a power of 2, you will hear a pitch that is
-          one or more <i>octaves</i> above the first pitch. Multiply the
-          frequency by a power of 3 and you get a <i>fifth</i>. Multiply by a
-          power of 5 and you get a <i>major third</i>. (These are musical terms
-          for <i>intervals</i>, distances between different pitches.)
-        </p>
-        <p>
-          The series of pitches you get by doing this kind of math is called
-          the{" "}
+          It turns out that the pattern of frequencies you hear for a given note
+          will be exactly the same regardless of whichever string you pluck. If
+          you have a string that vibrates at 440Hz, then it will also vibrate at
+          multiples of this frequency: 880, 1320, 1760, etc. This pattern is
+          called the{" "}
           <a
             href="https://en.wikipedia.org/wiki/Harmonic_series_(music)"
             target="_blank"
           >
-            overtone
-          </a>{" "}
-          series. The notes that correspond to these pitches are, at least in
-          music theory circles, associated with brightness and happiness. The
-          opposite of this is called the{" "} <i>undertone</i> series, and you
-          obtain it by dividing instead of multiplying. These notes are
-          associated with darkness and sadness.
+            harmonic series
+          </a>. The first frequency, or <i>harmonic</i>, in this list is called
+          the <i>fundamental</i>, and every other harmonic thereafter is called
+          an <i>overtone</i> (so, another name for this is the{" "}
+          <i>overtone series</i>).
         </p>
+        <OvertoneSeriesPlayer
+          synth={this.props.synth}
+          fundamental={440}
+          size={10}
+        />
         <p>
-          So the lattice is a visualization of the results you get by applying
-          math to the frequency 440Hz (a standard frequency) to produce various
-          pitches. Some of these pitches sound “out of tune”, but that’s another
-          topic for another day. Just know that pitches that are closer together
-          on the lattice will sound more in tune with each other than those that
-          are far away.
+          Given this, if we wanted a more realistically sounding tone, then we
+          would need to combine some of these frequencies:
+        </p>
+        <ChordPlayer
+          synth={this.props.synth}
+          frequencies={[440, 880, 1320, 1760]}
+        />
+        <p>
+          Now, a note on its own isn't any fun; things get more interesting once
+          you start to combine them together and create harmony. Two notes can
+          be close together in pitch or far away. We call the distance between
+          two pitches an <i>interval</i>. Different intervals have different
+          qualities, and to help us talk about them, we've given them different
+          names. For instance, the most basic interval is the octave:
+        </p>
+        <IntervalPlayer synth={this.props.synth} frequencies={[440, 880]} />
+        <p>
+          You might notice that the two pitches that form an octave sound
+          basically the same; there is a unity present here. This interval is
+          formed by multiplying a frequency by a power of 2. In this case we
+          multiplied 440Hz by 2 to get 880Hz, but we could also multiply it by 4
+          and 8:
+        </p>
+        <IntervalPlayer
+          synth={this.props.synth}
+          frequencies={[440, 880, 1760, 3520]}
+        />
+        <p>
+          So we know what happens if we multiply the frequency by even numbers
+          (since all even numbers are divisible by 2). What happens if we
+          multiply it by powers of certain odd numbers? Well, we get other
+          intervals. For instance, if we use a power of 3, we get a{" "}
+          <i>perfect fifth</i>. This is a very grounded, stable sound:
+        </p>
+        <IntervalPlayer synth={this.props.synth} frequencies={[440, 1320]} />
+        <p>
+          Actually, these two pitches (440Hz and 1320Hz) sound a little too far
+          apart; we can bring them closer together for a more rich sound. If we
+          know that multiplying a frequency by 2 raises the pitch by an octave,
+          then dividing a frequency by 2 lowers the pitch by an octave. So we
+          can divide 1320Hz by 2 to get 660:
+        </p>
+        <IntervalPlayer synth={this.props.synth} frequencies={[440, 660]} />
+        <p>
+          What if we use a power of 5, dividing it by 4 to bring it down two
+          octaves? Then we get a <i>major third</i>:
+        </p>
+        <IntervalPlayer synth={this.props.synth} frequencies={[440, 550]} />
+        <p>
+          What's so special about these intervals? If we put them together we
+          get a <i>chord</i> that you've probably heard many, many times before:
+        </p>
+        <ChordPlayer synth={this.props.synth} frequencies={[440, 550, 660]} />
+        <p>
+          We can even make use of math to find other notes and create new
+          chords. For instance, we can string a bunch of fifths together to
+          create an eery, open sound:
+        </p>
+        <ChordPlayer
+          synth={this.props.synth}
+          frequencies={[440, 660, 990, 1485]}
+        />
+        <p>
+          Or we can string a bunch of major thirds together to create an
+          unnerving sound:
+        </p>
+        <ChordPlayer
+          synth={this.props.synth}
+          frequencies={[440, 550, 687.5, 859.38]}
+        />
+        <p>
+          So far, we've merely used the overtone series (correcting them to
+          bring them into lower octaves). That gives us some interesting notes,
+          but we can go further. There's another series, called the{" "}
+          <i>undertone</i> series, and we create this by taking existing numbers
+          in the overtone series and <i>dividing</i> them by odd numbers.
+        </p>
+        <UndertoneSeriesPlayer
+          synth={this.props.synth}
+          fundamental={440}
+          size={10}
+        />
+        <p>
+          For instance, if we take 440 and divide it by 3, we get this sound:
+        </p>
+        <IntervalPlayer synth={this.props.synth} frequencies={[440, 293.33]} />
+        <p>
+          Technically this is still a fifth, but if we bring the second note up
+          one octave, then we create a <i>perfect fourth</i>:
+        </p>
+        <IntervalPlayer synth={this.props.synth} frequencies={[440, 586.66]} />
+        <p>We can also divide by 5:</p>
+        <IntervalPlayer synth={this.props.synth} frequencies={[440, 352]} />
+        <p>
+          This is known as a <i>minor third</i> interval. It sounds a little
+          darker than the other intervals, even if we flip it to create a{" "}
+          <i>minor sixth</i>:
+        </p>
+        <IntervalPlayer synth={this.props.synth} frequencies={[440, 704]} />
+        <p>
+          As you can see, music is very mathematical, and the lattice is an
+          effort to exhibit that math in a way that you can experiment and play
+          around with. See what new sounds you can create!
         </p>
         <h2>Credit</h2>
         <p>
@@ -184,6 +284,7 @@ class InfoModal extends React.Component {
 }
 
 InfoModal.propTypes = {
+  synth: PropTypes.instanceOf(Tone.PolySynth),
   isOpen: PropTypes.bool.isRequired,
   onClose: PropTypes.func.isRequired
 };

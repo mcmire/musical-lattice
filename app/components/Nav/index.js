@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import CSSModules from "react-css-modules";
 import { Icon } from "rmwc/Icon";
 import Tooltip from "rc-tooltip";
+import Tone from "tone";
 
 import InfoModal from "../InfoModal";
 import styles from "./index.css";
@@ -32,7 +33,11 @@ class Nav extends React.Component {
             </a>
           </Tooltip>
         </li>
-        <InfoModal isOpen={this.state.isModalOpen} onClose={this._closeModal} />
+        <InfoModal
+          synth={this.props.synth}
+          isOpen={this.state.isModalOpen}
+          onClose={this._closeModal}
+        />
       </ul>
     );
   }
@@ -45,5 +50,9 @@ class Nav extends React.Component {
     this.setState({ isModalOpen: false });
   }
 }
+
+Nav.propTypes = {
+  synth: PropTypes.instanceOf(Tone.PolySynth)
+};
 
 export default CSSModules(Nav, styles);
