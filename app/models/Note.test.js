@@ -67,7 +67,7 @@ describe("Note", () => {
       expect(newNote.tone).toEqual(new Tone(4));
       expect(newNote.commaOffset).toEqual(new CommaOffset(3));
       expect(newNote.semitoneOffset).toEqual(new SemitoneOffset(2));
-      expect(newNote.ratio).toEqual(new Ratio([9, 8]));
+      expect(newNote.ratio).toEqual(new Ratio([9, 4]));
     });
   });
 
@@ -127,7 +127,7 @@ describe("Note", () => {
       expect(newNote.tone).toEqual(new Tone(2));
       expect(newNote.commaOffset).toEqual(new CommaOffset(1));
       expect(newNote.semitoneOffset).toEqual(new SemitoneOffset(0));
-      expect(newNote.ratio).toEqual(new Ratio([16, 9]));
+      expect(newNote.ratio).toEqual(new Ratio([8, 9]));
     });
   });
 });

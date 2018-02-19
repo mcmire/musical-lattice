@@ -6,16 +6,16 @@ describe("Rational", () => {
       const oldRational = new Rational([5, 4]);
       const newRational = oldRational.multiplyBy(5);
 
-      expect(newRational.toArray()).toEqual([25, 16]);
+      expect(newRational.toArray()).toEqual([25, 4]);
     });
   });
 
   describe("#divideBy", () => {
-    it("returns a normalized ratio multiplied by the number", () => {
+    it("returns a normalized ratio divided by the number", () => {
       const oldRational = new Rational([5, 4]);
       const newRational = oldRational.divideBy(3);
 
-      expect(newRational.toArray()).toEqual([5, 3]);
+      expect(newRational.toArray()).toEqual([5, 12]);
     });
   });
 
@@ -52,25 +52,7 @@ describe("Rational", () => {
         const rational = new Rational([40, 15]);
         const normalizedRational = rational.normalize();
 
-        expect(normalizedRational.toArray()).toEqual([4, 3]);
-      });
-    });
-
-    describe("given a ratio greater than 2", () => {
-      it("upgrades the denominator until the ratio is between 1 and 2", () => {
-        const rational = new Rational([35, 5]);
-        const normalizedRational = rational.normalize();
-
-        expect(normalizedRational.toArray()).toEqual([7, 4]);
-      });
-    });
-
-    describe("given a ratio less than 2", () => {
-      it("upgrades the numerator until the ratio is between 1 and 2", () => {
-        const rational = new Rational([5, 35]);
-        const normalizedRational = rational.normalize();
-
-        expect(normalizedRational.toArray()).toEqual([8, 7]);
+        expect(normalizedRational.toArray()).toEqual([8, 3]);
       });
     });
   });

@@ -31,27 +31,27 @@ describe("Ratio", () => {
   });
 
   describe("#goEast", () => {
-    it("returns a Ratio multiplied by 3", () => {
+    it("returns a Ratio multiplied by 3/2", () => {
       const ratio = new Ratio([8, 5]);
 
       const newRatio = ratio.goEast();
 
-      expect(newRatio.toArray()).toEqual([6, 5]);
+      expect(newRatio.toArray()).toEqual([12, 5]);
     });
   });
 
   describe("#goWest", () => {
-    it("returns a Ratio divided by 3", () => {
+    it("returns a Ratio divided by 3/2", () => {
       const ratio = new Ratio([6, 5]);
 
       const newRatio = ratio.goWest();
 
-      expect(newRatio.toArray()).toEqual([8, 5]);
+      expect(newRatio.toArray()).toEqual([4, 5]);
     });
   });
 
   describe("#goNortheast", () => {
-    it("returns a Ratio multiplied by 5", () => {
+    it("returns a Ratio multiplied by 5/4", () => {
       const ratio = new Ratio([27, 20]);
 
       const newRatio = ratio.goNortheast();
@@ -61,7 +61,7 @@ describe("Ratio", () => {
   });
 
   describe("#goSouthwest", () => {
-    it("returns a Ratio divided by 5", () => {
+    it("returns a Ratio divided by 5/4", () => {
       const ratio = new Ratio([50, 27]);
 
       const newRatio = ratio.goSouthwest();
