@@ -7,8 +7,8 @@ import "typeface-roboto";
 import "typeface-roboto-condensed";
 import "typeface-roboto-slab";
 
-import "./stylesheets/index.css";
-import Root from "./components/Root";
+import "./stylesheets/lattice/index.css";
+import Root from "./components/lattice/Root";
 
 const rootElement = document.querySelector("#root");
 let renderRoot;
@@ -37,6 +37,6 @@ renderRoot();
 
 if (process.env.NODE_ENV !== "production") {
   if (module.hot) {
-    module.hot.accept("./components/Root", renderRoot);
+    module.hot.accept("./components/lattice/Root", renderRoot);
   }
 }

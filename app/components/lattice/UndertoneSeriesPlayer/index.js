@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 import CSSModules from "react-css-modules";
 import Tone from "tone";
 
-import roundToPrecision from "../../util/roundToPrecision";
+import roundToPrecision from "../../../util/roundToPrecision";
 import PlayButton from "../PlayButton";
 import styles from "./index.css";
 

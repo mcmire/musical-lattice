@@ -5,11 +5,15 @@ const mergeWebpackConfig = require("webpack-merge");
 const CleanWebpackPlugin = require("clean-webpack-plugin");
 const config = require("./config");
 
+const COMMON_ENTRIES = ["babel-polyfill", "react-hot-loader/patch"];
+
 module.exports = mergeWebpackConfig(common, {
-  entry: ["babel-polyfill", "react-hot-loader/patch", "./index.js"],
+  entry: {
+    "lattice": [...COMMON_ENTRIES, "./lattice.js"],
+  },
   devtool: "cheap-module-source-map",
   output: {
-    filename: "bundle.js"
+    filename: "[name].js"
   },
   module: {
     rules: [

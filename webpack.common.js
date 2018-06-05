@@ -29,7 +29,7 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: "index.pug",
+      template: "lattice.pug",
       inject: "body",
       filename: "index.html"
     })

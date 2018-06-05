@@ -4,8 +4,8 @@ import CSSModules from "react-css-modules";
 import StartAudioContext from "startaudiocontext";
 import Tone from "tone";
 
-import cellShapesFilePath from "../../svg/cell-shapes.svg";
-import CellLabel from "../../models/CellLabel";
+import cellShapesFilePath from "../../../svg/cell-shapes.svg";
+import CellLabel from "../../../models/CellLabel";
 import styles from "./index.css";
 
 class Cell extends React.Component {

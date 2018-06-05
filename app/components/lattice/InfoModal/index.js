@@ -8,7 +8,7 @@ import ChordPlayer from "../ChordPlayer";
 import IntervalPlayer from "../IntervalPlayer";
 import OvertoneSeriesPlayer from "../OvertoneSeriesPlayer";
 import UndertoneSeriesPlayer from "../UndertoneSeriesPlayer";
-import anatomyOfACell from "../../svg/anatomy-of-a-cell.svg";
+import anatomyOfACell from "../../../svg/anatomy-of-a-cell.svg";
 import styles from "./index.css";
 
 class InfoModal extends React.Component {

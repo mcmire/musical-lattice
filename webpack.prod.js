@@ -7,6 +7,8 @@ const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const config = require("./config");
 const common = require("./webpack.common.js");
 
+const COMMON_ENTRIES = ["babel-polyfill"];
+
 const ownCssBundle = new ExtractTextPlugin({
   filename: "[name]-[contenthash].css",
   allChunks: true
@@ -17,7 +19,9 @@ const vendorCssBundle = new ExtractTextPlugin({
 });
 
 module.exports = mergeWebpackConfig(common, {
-  entry: ["babel-polyfill", "./index.js"],
+  entry: {
+    "lattice": [...COMMON_ENTRIES, "./lattice.js"],
+  },
   devtool: "source-map",
   output: {
     filename: "[name].[chunkhash].js"

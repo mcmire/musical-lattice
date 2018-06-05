@@ -1,6 +1,6 @@
 import React from "react";
 
-import { buildLattice } from "../../models/Lattice";
+import { buildLattice } from "../../../models/Lattice";
 import Header from "../Header";
 import Nav from "../Nav";
 import Honeycomb from "../Honeycomb";

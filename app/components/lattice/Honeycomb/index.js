@@ -4,8 +4,8 @@ import PropTypes from "prop-types";
 import CSSModules from "react-css-modules";
 import Tone from "tone";
 
-import { Lattice } from "../../models/Lattice";
-import Location from "../../models/Location";
+import { Lattice } from "../../../models/Lattice";
+import Location from "../../../models/Location";
 import Cell from "../Cell";
 import styles from "./index.css";
 

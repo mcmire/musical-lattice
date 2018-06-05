@@ -1,5 +1,5 @@
 .root {
-  composes: nav from "../../stylesheets/nav.css";
+  composes: nav from "../../../stylesheets/lattice/nav.css";
 
   font-family: "Roboto Condensed";
   opacity: 0.3;
