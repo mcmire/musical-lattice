@@ -6,7 +6,7 @@
   "author": "Elliot Winkler <elliot.winkler@gmail.com>",
   "license": "ISC",
   "engines": {
-    "node": "8.x"
+    "node": "10.x"
   },
   "scripts": {
     "dev": "webpack-dev-server --config webpack.dev.js",
