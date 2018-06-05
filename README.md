@@ -6,6 +6,26 @@ pitches (tuned to [5-limit][5l] [just intonation][ji]).
 [5l]: https://en.wikipedia.org/wiki/Five-limit_tuning
 [ji]: https://en.wikipedia.org/wiki/Just_intonation
 
+## Developing
+
+### Getting started
+
+    yarn
+
+### Running the app locally
+
+Run:
+
+    yarn run dev
+
+and then visit
+
+    http://localhost:8080
+
+### Running tests
+
+    yarn run test
+
 ## Architecture
 
 * React
