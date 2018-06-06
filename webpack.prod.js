@@ -21,6 +21,7 @@ const vendorCssBundle = new ExtractTextPlugin({
 module.exports = mergeWebpackConfig(common, {
   entry: {
     "lattice": [...COMMON_ENTRIES, "./lattice.js"],
+    "eleven-limit": [...COMMON_ENTRIES, "./eleven-limit.js"]
   },
   devtool: "source-map",
   output: {

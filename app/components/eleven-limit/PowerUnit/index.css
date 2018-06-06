@@ -1,0 +1,10 @@
+.root {
+  composes: component from "../../../stylesheets/eleven-limit/component.css";
+
+  position: relative;
+  margin-right: 0.9em;
+  transition: margin-right linear 150ms;
+}
+
+.base {
+}

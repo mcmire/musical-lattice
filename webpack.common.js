@@ -15,8 +15,22 @@ module.exports = {
         use: "babel-loader"
       },
       {
-        test: /\.(eot|ijmap|svg|ttf|woff|woff2)$/,
+        test: /\.(eot|ijmap|ttf|woff|woff2)$/,
         use: "file-loader"
+      },
+      {
+        test: /\.svg$/,
+        use: [
+          {
+            loader: "babel-loader"
+          },
+          {
+            loader: "react-svg-loader",
+            options: {
+              jsx: true
+            }
+          }
+        ]
       },
       {
         test: /\.pug$/,
@@ -31,7 +45,14 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: "lattice.pug",
       inject: "body",
-      filename: "index.html"
+      filename: "index.html",
+      chunks: ["lattice"]
+    }),
+    new HtmlWebpackPlugin({
+      template: "eleven-limit.pug",
+      inject: "body",
+      filename: "eleven-limit.html",
+      chunks: ["eleven-limit"]
     })
   ]
 };

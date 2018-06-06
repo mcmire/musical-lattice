@@ -10,6 +10,7 @@ const COMMON_ENTRIES = ["babel-polyfill", "react-hot-loader/patch"];
 module.exports = mergeWebpackConfig(common, {
   entry: {
     "lattice": [...COMMON_ENTRIES, "./lattice.js"],
+    "eleven-limit": [...COMMON_ENTRIES, "./eleven-limit.js"]
   },
   devtool: "cheap-module-source-map",
   output: {

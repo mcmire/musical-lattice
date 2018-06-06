@@ -1,0 +1,91 @@
+.root {
+  position: relative;
+  font-size: 0.8em;
+  width: 1em;
+  border: 1px solid transparent;
+  transition: border-color linear 150ms, width linear 100ms;
+}
+
+.root:hover {
+  border-color: hsl(0, 0%, 90%);
+}
+
+.input {
+  display: block;
+  padding-left: 0.1em;
+  padding-right: 0.8em;
+  width: 100%;
+  border: none;
+}
+
+.input::-webkit-inner-spin-button,
+.input::-webkit-outer-spin-button {
+  appearance: none;
+  margin: 0;
+}
+
+.control {
+  position: absolute;
+  line-height: 1;
+  height: calc(50% - 0.05em);
+  right: 0.15em;
+  opacity: 0;
+  transition: opacity linear 150ms;
+}
+
+.root:hover .control {
+  opacity: 0.2;
+}
+
+.root .control:hover {
+  opacity: 1;
+}
+
+.incrementer {
+  top: 0.05em;
+}
+
+.decrementer {
+  bottom: 0.05em;
+}
+
+.disabled-control {
+  opacity: 1;
+  cursor: normal;
+}
+
+.incrementer-enabled {
+  composes: control;
+  composes: incrementer;
+}
+
+.incrementer-disabled {
+  composes: control;
+  composes: incrementer;
+  composes: disabled-control;
+}
+
+.decrementer-enabled {
+  composes: control;
+  composes: decrementer;
+}
+
+.decrementer-disabled {
+  composes: control;
+  composes: decrementer;
+  composes: disabled-control;
+}
+
+.control-icon {
+  display: block;
+  height: 100%;
+  width: 0.5em;
+}
+
+.root .disabled-control,
+.root .disabled-control:hover,
+.root:hover .disabled-control,
+.root:hover .disabled-control:hover {
+  opacity: 0;
+  pointer-events: none;
+}

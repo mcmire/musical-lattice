@@ -1,0 +1,12 @@
+@import "~normalize.css";
+
+:global * {
+  box-sizing: border-box;
+}
+
+:global body {
+  padding: 30px;
+  font-size: 40px;
+  font-family: Roboto;
+  line-height: 1.5;
+}

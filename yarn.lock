@@ -963,6 +963,10 @@ babel-plugin-lodash@^3.3.2:
     lodash "^4.17.4"
     require-package-name "^2.0.1"
 
+babel-plugin-react-svg@^2.1.0:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/babel-plugin-react-svg/-/babel-plugin-react-svg-2.1.0.tgz#169eeba1a20fa2dee3a71ff38eedd63d08e69487"
+
 babel-plugin-syntax-async-functions@^6.8.0:
   version "6.13.0"
   resolved "https://registry.yarnpkg.com/babel-plugin-syntax-async-functions/-/babel-plugin-syntax-async-functions-6.13.0.tgz#cad9cad1191b5ad634bf30ae0872391e0647be95"
@@ -975,7 +979,7 @@ babel-plugin-syntax-flow@^6.18.0:
   version "6.18.0"
   resolved "https://registry.yarnpkg.com/babel-plugin-syntax-flow/-/babel-plugin-syntax-flow-6.18.0.tgz#4c3ab20a2af26aa20cd25995c398c4eb70310c8d"
 
-babel-plugin-syntax-jsx@^6.3.13, babel-plugin-syntax-jsx@^6.8.0:
+babel-plugin-syntax-jsx@^6.18.0, babel-plugin-syntax-jsx@^6.3.13, babel-plugin-syntax-jsx@^6.8.0:
   version "6.18.0"
   resolved "https://registry.yarnpkg.com/babel-plugin-syntax-jsx/-/babel-plugin-syntax-jsx-6.18.0.tgz#0af32a9a6e13ca7a3fd5069e62d7b0f58d0d8946"
 
@@ -4894,6 +4898,10 @@ lodash.isequal@^3.0:
     lodash._baseisequal "^3.0.0"
     lodash._bindcallback "^3.0.0"
 
+lodash.isplainobject@^4.0.6:
+  version "4.0.6"
+  resolved "https://registry.yarnpkg.com/lodash.isplainobject/-/lodash.isplainobject-4.0.6.tgz#7c526a52d89b45c45cc690b88163be0497f550cb"
+
 lodash.istypedarray@^3.0.0:
   version "3.0.6"
   resolved "https://registry.yarnpkg.com/lodash.istypedarray/-/lodash.istypedarray-3.0.6.tgz#c9a477498607501d8e8494d283b87c39281cef62"
@@ -6882,6 +6890,25 @@ react-router@^4.2.0:
     prop-types "^15.5.4"
     warning "^3.0.0"
 
+react-svg-core@^2.1.0:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/react-svg-core/-/react-svg-core-2.1.0.tgz#3700322af70117c91f83f18febb481128de3cfbb"
+  dependencies:
+    babel-core "^6.26.0"
+    babel-plugin-react-svg "^2.1.0"
+    babel-plugin-syntax-jsx "^6.18.0"
+    babel-plugin-transform-object-rest-spread "^6.26.0"
+    babel-preset-react "^6.24.1"
+    lodash.isplainobject "^4.0.6"
+    svgo "^0.7.2"
+
+react-svg-loader@^2.1.0:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/react-svg-loader/-/react-svg-loader-2.1.0.tgz#ba15019413b9b11e2012e86580aea1eecc93677e"
+  dependencies:
+    loader-utils "^1.1.0"
+    react-svg-core "^2.1.0"
+
 react-test-renderer@^16.0.0-0, react-test-renderer@^16.2.0:
   version "16.4.0"
   resolved "https://registry.yarnpkg.com/react-test-renderer/-/react-test-renderer-16.4.0.tgz#0dbe0e24263e94e1830c7afb1f403707fad313a3"
@@ -7836,7 +7863,7 @@ supports-color@^5.1.0, supports-color@^5.3.0, supports-color@^5.4.0:
   dependencies:
     has-flag "^3.0.0"
 
-svgo@^0.7.0:
+svgo@^0.7.0, svgo@^0.7.2:
   version "0.7.2"
   resolved "https://registry.yarnpkg.com/svgo/-/svgo-0.7.2.tgz#9f5772413952135c6fefbf40afe6a4faa88b4bb5"
   dependencies:

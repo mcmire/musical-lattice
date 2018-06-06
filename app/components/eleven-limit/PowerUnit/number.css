@@ -1,0 +1,45 @@
+.root {
+  composes: root from "../SpinnableNumber/index.css";
+
+  display: block;
+  top: -0.25em;
+  left: 102%;
+  position: absolute;
+  z-index: 1;
+}
+
+.input {
+  composes: input from "../SpinnableNumber/index.css";
+
+  background: transparent;
+  color: hsl(320, 100%, 50%);
+}
+
+.root:hover .input,
+.input:focus {
+  background: white;
+}
+
+.control {
+  composes: control from "../SpinnableNumber/index.css";
+}
+
+.incrementer-enabled {
+  composes: incrementer-enabled from "../SpinnableNumber/index.css";
+}
+
+.incrementer-disabled {
+  composes: incrementer-disabled from "../SpinnableNumber/index.css";
+}
+
+.decrementer-enabled {
+  composes: decrementer-enabled from "../SpinnableNumber/index.css";
+}
+
+.decrementer-disabled {
+  composes: decrementer-disabled from "../SpinnableNumber/index.css";
+}
+
+.control-icon {
+  composes: control-icon from "../SpinnableNumber/index.css";
+}

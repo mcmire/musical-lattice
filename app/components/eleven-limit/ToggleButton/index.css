@@ -1,0 +1,13 @@
+.root {
+  border: none;
+  background: hsl(245, 98%, 66%);
+  color: white;
+  border-radius: 0.25em;
+  padding: 0.35em 0.45em;
+  cursor: pointer;
+  transition: background linear 150ms;
+}
+
+.root:hover {
+  background: hsl(251, 93%, 56%);
+}

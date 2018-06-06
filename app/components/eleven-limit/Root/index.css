@@ -1,0 +1,24 @@
+.root {
+}
+
+.section {
+  composes: section from "../../../stylesheets/eleven-limit/section.css";
+}
+
+.component {
+  composes: component from "../../../stylesheets/eleven-limit/component.css";
+}
+
+.operator {
+  composes: component;
+  color: hsl(0, 0%, 86%);
+}
+
+.diff-in-cents {
+  font-size: 75%;
+  color: hsl(0, 0%, 86%);
+}
+
+.number {
+  font-weight: bold;
+}
