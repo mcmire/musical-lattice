@@ -26,7 +26,7 @@
     "babel-preset-react": "^6.24.1",
     "caniuse-lite": "^1.0.30000805",
     "clean-webpack-plugin": "^0.1.18",
-    "cross-fetch": "^1.1.1",
+    "cross-fetch": "^3.1.5",
     "css-loader": "^0.28.9",
     "express": "^4.16.2",
     "extract-text-webpack-plugin": "^3.0.2",
